@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sống Lớn Hơn Chính Mình - Website Phim</title>
+    <!-- Tải Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Thiết lập font Inter và cấu hình Tailwind -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0d0d; /* Nền tối cho cảm giác điện ảnh */
+            color: #e5e5e5; /* Màu chữ sáng */
+            scroll-behavior: smooth;
+        }
+        /* Custom scrollbar style */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4a4a4a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b6b6b;
+        }
+        /* Style cho các nút xem phim */
+        .btn-primary {
+            @apply inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-red-600 hover:bg-red-700 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-red-500 focus:ring-opacity-50;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Thanh Điều Hướng (Navigation Bar) -->
+    <header class="sticky top-0 z-50 bg-black bg-opacity-90 backdrop-blur-sm shadow-xl">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="text-xl font-extrabold text-white tracking-widest">
+                BIGGER THAN YOURSELF
+            </div>
+            <div class="space-x-4 hidden md:flex">
+                <a href="#trang-chu" class="text-gray-300 hover:text-white transition duration-200" onclick="scrollToSection('trang-chu')">Trang chủ</a>
+                <a href="#ve-phim" class="text-gray-300 hover:text-white transition duration-200" onclick="scrollToSection('ve-phim')">Về phim</a>
+                <a href="#dien-vien-doi-ngu" class="text-gray-300 hover:text-white transition duration-200" onclick="scrollToSection('dien-vien-doi-ngu')">Diễn viên & Đội ngũ</a>
+                <a href="#tin-tuc" class="text-gray-300 hover:text-white transition duration-200" onclick="scrollToSection('tin-tuc')">Tin tức</a>
+                <a href="#lien-he" class="text-gray-300 hover:text-white transition duration-200" onclick="scrollToSection('lien-he')">Liên hệ</a>
+            </div>
+            <!-- Mobile Menu Button (simplified for single file) -->
+            <button class="md:hidden text-white" aria-label="Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 1. Trang Chủ (Hero Section) -->
+        <section id="trang-chu" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+            <!-- Poster phim lớn (Placeholder) -->
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/1a1a1a/ffffff?text=[Ảnh+Poster+Phim+Lớn]'); opacity: 0.3;"></div>
+            <!-- Lớp phủ gradient để làm nổi bật chữ -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-80"></div>
+            
+            <div class="relative z-10 p-6 md:p-12 max-w-4xl">
+                <h1 class="text-6xl md:text-8xl font-black text-white mb-4 tracking-tight leading-tight uppercase">
+                    SỐNG LỚN HƠN CHÍNH MÌNH
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8">
+                    Phim Ngắn | 2024
+                </p>
+                <!-- Nút xem phim -->
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn-primary">
+                    <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                    Xem Phim Ngay
+                </a>
+            </div>
+        </section>
+
+        <!-- 1b. Giới thiệu ngắn -->
+        <section class="py-16 bg-black">
+            <div class="max-w-5xl mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold text-red-600 mb-4">KHÁM PHÁ HÀNH TRÌNH</h2>
+                <p class="text-lg text-gray-400 mb-6">
+                    Bộ phim là hành trình khám phá bản thân đầy cảm xúc của nhóm bạn trẻ, đối diện với những áp lực và kỳ vọng để tìm ra ý nghĩa thực sự của việc "Sống Lớn Hơn Chính Mình".
+                </p>
+                <p class="text-lg text-gray-400">
+                    Phim không chỉ là một câu chuyện mà còn là một lời mời gọi bạn nhìn lại những định kiến và giới hạn cá nhân. Nó đặt ra câu hỏi: Liệu bạn đã thực sự sống với tất cả tiềm năng của mình chưa?
+                </p>
+            </div>
+        </section>
+        
+        <!-- 2. Về Phim -->
+        <section id="ve-phim" class="py-20 bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-white text-center mb-12 border-b-2 border-red-600 pb-2 inline-block mx-auto">VỀ PHIM</h2>
+
+                <!-- Tóm tắt & Thông điệp -->
+                <div class="grid md:grid-cols-2 gap-12 mb-16">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-red-500 mb-4">Tóm Tắt Cốt Truyện (Gợi Mở)</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Câu chuyện xoay quanh An, một sinh viên kiến trúc luôn cảm thấy mình nhỏ bé giữa thành phố lớn và gánh nặng của gia đình. Khi một dự án cộng đồng quan trọng đứng trước nguy cơ bị hủy bỏ, An và những người bạn phải hợp lực, không chỉ để cứu lấy dự án mơ ước mà còn để vượt qua giới hạn của chính họ, khám phá sức mạnh tập thể và giá trị của sự đồng cảm. Đây là một cuộc chiến không khoan nhượng giữa lý tưởng tuổi trẻ và thực tế khắc nghiệt.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-red-500 mb-4">Thông Điệp: "Being Bigger Than Yourself"</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            "Sống Lớn Hơn Chính Mình" không có nghĩa là trở nên vĩ đại hay nổi tiếng. Thông điệp cốt lõi là khả năng kết nối, thấu hiểu và tạo ra giá trị tích cực cho cộng đồng xung quanh. Bộ phim khẳng định rằng, mỗi hành động nhỏ, mỗi sự quan tâm chân thành đều có thể tạo nên sự khác biệt lớn, giúp chúng ta nhìn thấy bức tranh rộng hơn ngoài những lợi ích cá nhân.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Quá trình thực hiện -->
+                <div class="bg-gray-800 p-8 rounded-xl shadow-2xl mb-16">
+                    <h3 class="text-3xl font-bold text-white mb-6 text-center">🎬 Quá Trình Thực Hiện</h3>
+                    <div class="text-gray-400 space-y-4">
+                        <p><strong>Khó khăn & Thử thách:</strong> Quá trình thực hiện bộ phim không hề dễ dàng. Chúng tôi phải đối phó với thời tiết thất thường, từ cái nắng gắt ban trưa đến những cơn mưa bất chợt, cùng với áp lực về thời gian và ngân sách. Có những cảnh quay phải quay đi quay lại hàng chục lần để đạt được độ hoàn hảo về cảm xúc.</p>
+                        <p><strong>Kỷ niệm vui:</strong> Tuy nhiên, chính những khó khăn đó lại tạo ra những kỷ niệm đáng nhớ. Cả đoàn đã cùng nhau thức trắng đêm để hoàn thành cảnh cao trào quan trọng, cùng chia sẻ những bữa ăn vội vã nhưng đầy ắp tiếng cười và sự động viên. Sự gắn kết giữa các thành viên đã biến chúng tôi thành một gia đình thực sự.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery ảnh Hậu trường -->
+                <div>
+                    <h3 class="text-3xl font-bold text-white mb-8 text-center">📸 Gallery Ảnh Hậu Trường (Behind The Scenes)</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <img class="w-full h-40 object-cover rounded-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer" src="https://placehold.co/400x300/3d3d3d/ffffff?text=BTS+1" alt="[Ảnh hậu trường 1]">
+                        <img class="w-full h-40 object-cover rounded-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer" src="https://placehold.co/400x300/3d3d3d/ffffff?text=BTS+2" alt="[Ảnh hậu trường 2]">
+                        <img class="w-full h-40 object-cover rounded-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer" src="https://placehold.co/400x300/3d3d3d/ffffff?text=Cảnh+Đẹp+1" alt="[Ảnh cảnh quay đẹp 1]">
+                        <img class="w-full h-40 object-cover rounded-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer" src="https://placehold.co/400x300/3d3d3d/ffffff?text=Cảnh+Đẹp+2" alt="[Ảnh cảnh quay đẹp 2]">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Diễn viên và Đội ngũ -->
+        <section id="dien-vien-doi-ngu" class="py-20 bg-black">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-white text-center mb-12 border-b-2 border-red-600 pb-2 inline-block mx-auto">DIỄN VIÊN & ĐỘI NGŨ</h2>
+
+                <h3 class="text-3xl font-semibold text-red-500 mb-8 text-center">Diễn Viên Chính</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-16">
+                    <!-- Diễn viên 1 -->
+                    <div class="text-center">
+                        <img class="w-32 h-32 mx-auto rounded-full object-cover shadow-xl border-4 border-red-600 mb-3" src="https://placehold.co/200x200/555/ffffff?text=DV+An" alt="[Ảnh Diễn viên An]">
+                        <p class="text-xl font-bold text-white">Trần Văn An</p>
+                        <p class="text-sm text-gray-400">Vai: Nhân vật chính</p>
+                        <p class="text-xs italic text-gray-500 mt-1">Là trụ cột cảm xúc của phim.</p>
+                    </div>
+                    <!-- Diễn viên 2 -->
+                    <div class="text-center">
+                        <img class="w-32 h-32 mx-auto rounded-full object-cover shadow-xl border-4 border-red-600 mb-3" src="https://placehold.co/200x200/555/ffffff?text=DV+Hương" alt="[Ảnh Diễn viên Hương]">
+                        <p class="text-xl font-bold text-white">Lê Thị Hương</p>
+                        <p class="text-sm text-gray-400">Vai: Bạn thân An</p>
+                        <p class="text-xs italic text-gray-500 mt-1">Đem lại sự lạc quan, hài hước.</p>
+                    </div>
+                    <!-- Diễn viên 3 -->
+                    <div class="text-center">
+                        <img class="w-32 h-32 mx-auto rounded-full object-cover shadow-xl border-4 border-red-600 mb-3" src="https://placehold.co/200x200/555/ffffff?text=DV+Minh" alt="[Ảnh Diễn viên Minh]">
+                        <p class="text-xl font-bold text-white">Nguyễn Hoàng Minh</p>
+                        <p class="text-sm text-gray-400">Vai: Đối thủ / Đồng minh</p>
+                        <p class="text-xs italic text-gray-500 mt-1">Nhân vật phản diện có chiều sâu.</p>
+                    </div>
+                </div>
+
+                <h3 class="text-3xl font-semibold text-red-500 mb-8 text-center">Đội Ngũ Sản Xuất</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <!-- Đạo diễn -->
+                    <div class="text-center">
+                        <img class="w-24 h-24 mx-auto rounded-full object-cover shadow-xl border-2 border-gray-500 mb-3" src="https://placehold.co/200x200/333/ffffff?text=Đạo+Diễn" alt="[Ảnh Đạo diễn]">
+                        <p class="text-lg font-bold text-white">Phạm Trung Tín</p>
+                        <p class="text-sm text-red-600">Đạo Diễn</p>
+                        <p class="text-xs text-gray-500 mt-1">Người kiến tạo tầm nhìn cho bộ phim.</p>
+                    </div>
+                    <!-- Quay phim -->
+                    <div class="text-center">
+                        <img class="w-24 h-24 mx-auto rounded-full object-cover shadow-xl border-2 border-gray-500 mb-3" src="https://placehold.co/200x200/333/ffffff?text=Quay+Phim" alt="[Ảnh Quay phim]">
+                        <p class="text-lg font-bold text-white">Võ Thanh Hải</p>
+                        <p class="text-sm text-red-600">Quay Phim (DOP)</p>
+                        <p class="text-xs text-gray-500 mt-1">Bắt trọn từng khung hình cảm xúc.</p>
+                    </div>
+                    <!-- Biên kịch -->
+                    <div class="text-center">
+                        <img class="w-24 h-24 mx-auto rounded-full object-cover shadow-xl border-2 border-gray-500 mb-3" src="https://placehold.co/200x200/333/ffffff?text=Biên+Kịch" alt="[Ảnh Biên kịch]">
+                        <p class="text-lg font-bold text-white">Đỗ Ngọc Mai</p>
+                        <p class="text-sm text-red-600">Biên Kịch</p>
+                        <p class="text-xs text-gray-500 mt-1">Linh hồn của câu chuyện.</p>
+                    </div>
+                    <!-- Dựng phim -->
+                    <div class="text-center">
+                        <img class="w-24 h-24 mx-auto rounded-full object-cover shadow-xl border-2 border-gray-500 mb-3" src="https://placehold.co/200x200/333/ffffff?text=Dựng+Phim" alt="[Ảnh Dựng phim]">
+                        <p class="text-lg font-bold text-white">Hoàng Anh Dũng</p>
+                        <p class="text-sm text-red-600">Dựng Phim (Editor)</p>
+                        <p class="text-xs text-gray-500 mt-1">Người thổi hồn vào nhịp phim.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 4. Xem Phim (Link YouTube) -->
+        <section id="xem-phim" class="py-20 bg-gray-900 text-center">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-white mb-8 border-b-2 border-red-600 pb-2 inline-block mx-auto">XEM PHIM</h2>
+                <p class="text-xl text-gray-400 mb-8">
+                    Khám phá toàn bộ bộ phim ngắn "Sống Lớn Hơn Chính Mình" ngay trên kênh YouTube chính thức của nhóm!
+                </p>
+                <!-- Iframe nhúng YouTube (Placeholder) -->
+                <div class="relative pt-[56.25%] mb-8 rounded-xl overflow-hidden shadow-2xl">
+                    <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <a href="https://www.youtube.com/user/yourchannel" target="_blank" class="btn-primary bg-red-800 hover:bg-red-900">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.46 0-4.336 1.135-4.385 4.336-.049 3.201-.049 6.843 0 10.044.049 3.201.875 4.336 4.385 4.336 3.599.246 11.626.246 15.23 0 3.46 0 4.336-1.135 4.385-4.336.049-3.201.049-6.843 0-10.044-.049-3.201-.875-4.336-4.385-4.336zM9.545 15.939V8.061L15.428 12l-5.883 3.939z"/></svg>
+                    Tới Kênh YouTube
+                </a>
+            </div>
+        </section>
+
+        <!-- 5. Tin Tức/Bài Viết -->
+        <section id="tin-tuc" class="py-20 bg-black">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-white text-center mb-12 border-b-2 border-red-600 pb-2 inline-block mx-auto">TIN TỨC & CẢM NGHĨ</h2>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Bài viết 1: Cảm nghĩ -->
+                    <div class="bg-gray-800 rounded-xl p-6 shadow-xl hover:shadow-red-900/50 transition duration-300">
+                        <h3 class="text-xl font-bold text-red-500 mb-2">Cảm nghĩ sau khi đóng máy: Lửa nhiệt không tắt</h3>
+                        <p class="text-sm text-gray-400 mb-3">Ngày đăng: 15/10/2024</p>
+                        <p class="text-gray-500 text-sm line-clamp-4">
+                            Hơn cả một dự án, "Sống Lớn Hơn Chính Mình" là một hành trình tự hoàn thiện của từng thành viên. Bài viết chia sẻ những cảm xúc chân thật nhất của đạo diễn về sự cống hiến, những giọt nước mắt, và tinh thần đồng đội không thể nào quên...
+                        </p>
+                        <a href="#" class="text-red-500 hover:text-red-400 text-sm mt-3 inline-block">Đọc thêm »</a>
+                    </div>
+                    <!-- Bài viết 2: Bài học -->
+                    <div class="bg-gray-800 rounded-xl p-6 shadow-xl hover:shadow-red-900/50 transition duration-300">
+                        <h3 class="text-xl font-bold text-red-500 mb-2">5 Bài học đắt giá từ quá trình làm phim độc lập</h3>
+                        <p class="text-sm text-gray-400 mb-3">Ngày đăng: 01/11/2024</p>
+                        <p class="text-gray-500 text-sm line-clamp-4">
+                            Từ quản lý khủng hoảng bối cảnh cho đến tối ưu hóa ánh sáng với ngân sách eo hẹp, chúng tôi đã rút ra được 5 bài học quan trọng nhất cho bất kỳ nhà làm phim độc lập nào. Đây là những kinh nghiệm xương máu mà chúng tôi muốn chia sẻ...
+                        </p>
+                        <a href="#" class="text-red-500 hover:text-red-400 text-sm mt-3 inline-block">Đọc thêm »</a>
+                    </div>
+                    <!-- Bài viết 3: Phỏng vấn -->
+                    <div class="bg-gray-800 rounded-xl p-6 shadow-xl hover:shadow-red-900/50 transition duration-300">
+                        <h3 class="text-xl font-bold text-red-500 mb-2">Phỏng vấn nhanh diễn viên chính: An và vai diễn đột phá</h3>
+                        <p class="text-sm text-gray-400 mb-3">Ngày đăng: 10/11/2024</p>
+                        <p class="text-gray-500 text-sm line-clamp-4">
+                            Diễn viên Trần Văn An chia sẻ về cách anh ấy hóa thân vào nhân vật, những khó khăn khi thể hiện chiều sâu tâm lý và khoảnh khắc An cảm thấy mình thực sự "Sống Lớn Hơn Chính Mình" trong quá trình quay phim...
+                        </p>
+                        <a href="#" class="text-red-500 hover:text-red-400 text-sm mt-3 inline-block">Đọc thêm »</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Liên Hệ -->
+        <section id="lien-he" class="py-20 bg-gray-900">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-white text-center mb-12 border-b-2 border-red-600 pb-2 inline-block mx-auto">LIÊN HỆ</h2>
+
+                <div class="bg-gray-800 p-8 rounded-xl shadow-2xl">
+                    <form onsubmit="handleContact(event)">
+                        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Họ tên</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-700 text-white focus:ring-red-500 focus:border-red-500 transition">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-700 text-white focus:ring-red-500 focus:border-red-500 transition">
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <label for="subject" class="block text-sm font-medium text-gray-300 mb-1">Tiêu đề</label>
+                            <input type="text" id="subject" name="subject" required class="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-700 text-white focus:ring-red-500 focus:border-red-500 transition">
+                        </div>
+                        <div class="mt-6">
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Nội dung tin nhắn</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-700 text-white focus:ring-red-500 focus:border-red-500 transition"></textarea>
+                        </div>
+                        <div class="mt-8 text-center">
+                            <button type="submit" class="btn-primary">
+                                Gửi Tin Nhắn
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <!-- Thông tin liên hệ trực tiếp và Mạng xã hội -->
+                    <div class="mt-12 text-center border-t border-gray-700 pt-8">
+                        <h4 class="text-xl font-semibold text-white mb-4">Hoặc Liên Hệ Trực Tiếp</h4>
+                        <p class="text-gray-400 mb-2">Email: <a href="mailto:contact@phimngan.vn" class="text-red-500 hover:text-red-400">contact@phimngan.vn</a></p>
+                        <p class="text-gray-400">Điện thoại: (090) 123-4567</p>
+
+                        <div class="flex justify-center space-x-6 mt-6">
+                            <!-- Facebook -->
+                            <a href="#" target="_blank" class="text-gray-400 hover:text-red-500 transition duration-200" aria-label="Facebook">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 5.088 3.708 9.38 8.583 10.15V14.73h-2.92v-3.37h2.92V9.3c0-2.883 1.76-4.47 4.33-4.47 1.229 0 2.288.088 2.593.127v3.012h-1.782c-1.4 0-1.674.667-1.674 1.64v2.14h3.333l-.54 3.37h-2.793v7.42C18.292 21.38 22 17.088 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                            </a>
+                            <!-- Instagram -->
+                            <a href="#" target="_blank" class="text-gray-400 hover:text-red-500 transition duration-200" aria-label="Instagram">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c2.716 0 3.056.01 4.123.06 1.065.05 1.794.22 2.457.464.673.25 1.258.603 1.83 1.176.572.572.926 1.157 1.176 1.83.244.663.414 1.392.464 2.457.05 1.067.06 1.407.06 4.123s-.01 3.056-.06 4.123c-.05 1.065-.22 1.794-.464 2.457-.25.673-.603 1.258-1.176 1.83-.572.572-1.157.926-1.83 1.176-.663.244-1.392.414-2.457.464-1.067.05-1.407.06-4.123.06s-3.056-.01-4.123-.06c-1.065-.05-1.794-.22-2.457-.464-.673-.25-1.258-.603-1.83-1.176-.572-.572-.926-1.157-1.176-1.83-.244-.663-.414-1.392-.464-2.457-.05-1.067-.06-1.407-.06-4.123s.01-3.056.06-4.123c.05-1.065.22-1.794.464-2.457.25-.673.603-1.258 1.176-1.83.572-.572 1.157-.926 1.83-1.176.663-.244 1.392-.414 2.457-.464C8.944 2.01 9.284 2 12 2zm0 1.98c-2.673 0-3.02.01-4.085.06-.976.046-1.576.21-1.956.346-.41.144-.648.337-.887.576-.239.239-.432.477-.576.887-.136.38-.3.98-.346 1.956-.05 1.065-.06 1.412-.06 4.085s.01 3.02.06 4.085c.046.976.21 1.576.346 1.956.144.41.337.648.576.887.239.239.477.432.887.576.38.136.98.3 1.956.346 1.065.05 1.412.06 4.085.06s3.02-.01 4.085-.06c.976-.046 1.576-.21 1.956-.346.41-.144.648-.337.887-.576.239-.239.432-.477.576-.887.136-.38.3-.98.346-1.956.05-1.065.06-1.412.06-4.085s-.01-3.02-.06-4.085c-.046-.976-.21-1.576-.346-1.956-.144-.41-.337-.648-.576-.887-.239-.239-.477-.432-.887-.576-.38-.136-.98-.3-1.956-.346C15.02 3.99 14.673 3.98 12 3.98zm0 3.5c2.485 0 4.5 2.015 4.5 4.5s-2.015 4.5-4.5 4.5-4.5-2.015-4.5-4.5 2.015-4.5 4.5-4.5zm0 1.98c-1.398 0-2.52 1.122-2.52 2.52s1.122 2.52 2.52 2.52 2.52-1.122 2.52-2.52-1.122-2.52-2.52-2.52zm6.2-4.14a1.05 1.05 0 011.05 1.05 1.05 1.05 0 01-1.05 1.05 1.05 1.05 0 01-1.05-1.05 1.05 1.05 0 011.05-1.05z"/></svg>
+                            </a>
+                            <!-- TikTok/Other -->
+                             <a href="#" target="_blank" class="text-gray-400 hover:text-red-500 transition duration-200" aria-label="TikTok">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm2.5 13.5c0 .276-.224.5-.5.5H9c-.276 0-.5-.224-.5-.5v-4h3.5v-1h-3.5V8c0-.276.224-.5.5-.5h2.5c.276 0 .5.224.5.5v2.5h-2.5v1h2.5v3.5zm-5.5-5.5c0-.276.224-.5.5-.5h2.5v1H9.5v-.5z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-800 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
+            <p>&copy; 2024 Phim Ngắn: Sống Lớn Hơn Chính Mình. Mọi quyền được bảo lưu.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript cho chức năng cuộn mượt và xử lý form -->
+    <script>
+        // Hàm cuộn mượt đến các section
+        function scrollToSection(id) {
+            const section = document.getElementById(id);
+            if (section) {
+                // Sử dụng hàm scrollIntoView để cuộn mượt
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Xử lý Form Liên Hệ
+        function handleContact(event) {
+            event.preventDefault();
+            // Lấy dữ liệu form (chỉ là demo, không gửi đi thật)
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Hiển thị modal thông báo (thay vì alert())
+            showNotification(`Cảm ơn bạn ${name}!`, `Tin nhắn của bạn với tiêu đề "${subject}" đã được nhóm làm phim ghi nhận. Chúng tôi sẽ phản hồi sớm nhất qua email ${email}.`);
+            
+            // Xóa form sau khi gửi
+            event.target.reset();
+        }
+
+        // Tạo Modal/Message Box tùy chỉnh (thay thế cho alert/confirm)
+        function showNotification(title, message) {
+            const existingModal = document.getElementById('custom-modal');
+            if (existingModal) existingModal.remove();
+
+            const modalHtml = `
+                <div id="custom-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-[100]">
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-2xl max-w-sm mx-4 transform transition-all duration-300 scale-100">
+                        <h4 class="text-xl font-bold text-red-500 mb-3">${title}</h4>
+                        <p class="text-gray-300 text-sm">${message}</p>
+                        <button onclick="closeModal()" class="mt-5 px-4 py-2 bg-red-600 text-white rounded-full text-sm hover:bg-red-700 transition">Đóng</button>
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', modalHtml);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('custom-modal');
+            if (modal) {
+                modal.classList.add('opacity-0');
+                setTimeout(() => modal.remove(), 300); // Xóa sau khi hoàn thành transition
+            }
+        }
+
+        // Xử lý menu mobile (chỉ hiển thị liên kết cuộn)
+        document.querySelector('.md\\:hidden').addEventListener('click', () => {
+            const nav = document.querySelector('nav');
+            // Đơn giản hóa: cuộn lên đầu trang hoặc hiển thị thông báo
+            showNotification('Menu', 'Hãy cuộn xuống để xem các mục hoặc sử dụng thanh điều hướng trên desktop!');
+            scrollToSection('trang-chu');
+        });
+    </script>
+</body>
+</html>
