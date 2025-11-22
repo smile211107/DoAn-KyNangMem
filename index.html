@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sống Lớn Hơn Chính Mình - Website Phim</title>
+    <title>BEING BIGGER THAN YOURSELF - Website Phim</title>
     <!-- Tải Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Thiết lập font Inter và cấu hình Tailwind -->
@@ -30,12 +30,6 @@
         .btn-primary {
             @apply inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-red-600 hover:bg-red-700 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-red-500 focus:ring-opacity-50;
         }
-        .btn-ai {
-             @apply inline-flex items-center justify-center px-6 py-2 border border-yellow-500 text-sm font-medium rounded-full text-yellow-500 bg-gray-900 hover:bg-yellow-900/30 transition duration-300 transform hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-yellow-500 focus:ring-opacity-50;
-        }
-        .ai-output-box {
-            @apply mt-6 p-4 border border-yellow-700 bg-yellow-900/20 rounded-xl shadow-inner text-sm text-yellow-100 whitespace-pre-wrap;
-        }
     </style>
 </head>
 <body>
@@ -43,15 +37,31 @@
     <!-- Thanh Điều Hướng (Navigation Bar) -->
     <header class="sticky top-0 z-50 bg-black bg-opacity-90 backdrop-blur-sm shadow-xl">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <div class="text-xl font-extrabold text-white tracking-widest">
-                BIGGER THAN YOURSELF
+            <!-- LOGO MỚI -->
+            <div class="flex items-center space-x-3 group cursor-pointer" onclick="scrollToSection('trang-chu')">
+                <!-- SVG Logo Quả Địa Cầu được thiết kế mới -->
+                <div class="relative">
+                    <!-- Hiệu ứng glow phía sau -->
+                    <div class="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-900 rounded-full blur opacity-50 group-hover:opacity-100 transition duration-500"></div>
+                    <!-- Icon chính -->
+                    <div class="relative bg-black rounded-full p-1 border border-red-800">
+                        <svg class="w-9 h-9 text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="text-xl font-extrabold text-white tracking-widest hidden sm:block group-hover:text-red-500 transition duration-300">
+                    BEING BIGGER THAN YOURSELF
+                </div>
             </div>
+            <!-- END LOGO MỚI -->
             <div class="space-x-4 hidden md:flex">
                 <a href="#trang-chu" class="text-gray-300 hover:text-white transition duration-200" onclick="scrollToSection('trang-chu')">Trang chủ</a>
                 <a href="#ve-phim" class="text-gray-300 hover:text-white transition duration-200" onclick="scrollToSection('ve-phim')">Về phim</a>
                 <a href="#dien-vien-doi-ngu" class="text-gray-300 hover:text-white transition duration-200" onclick="scrollToSection('dien-vien-doi-ngu')">Diễn viên & Đội ngũ</a>
                 <a href="#tin-tuc" class="text-gray-300 hover:text-white transition duration-200" onclick="scrollToSection('tin-tuc')">Tin tức</a>
-                <a href="#lien-he" class="text-gray-300 hover:text-white transition duration-200" onclick="scrollToSection('lien-he')">Liên hệ</a>
+                <a href="#cong-cu" class="text-gray-300 hover:text-white transition duration-200" onclick="scrollToSection('cong-cu')">Công cụ</a>
             </div>
             <!-- Mobile Menu Button (simplified for single file) -->
             <button class="md:hidden text-white" aria-label="Menu">
@@ -70,10 +80,10 @@
             
             <div class="relative z-10 p-6 md:p-12 max-w-4xl">
                 <h1 class="text-6xl md:text-8xl font-black text-white mb-4 tracking-tight leading-tight uppercase">
-                    SỐNG LỚN HƠN CHÍNH MÌNH
+                    BEING BIGGER THAN YOURSELF
                 </h1>
                 <p class="text-xl md:text-2xl text-gray-300 mb-8">
-                    Phim Ngắn | 2024
+                    Phim Ngắn | 25C10 | s2L team
                 </p>
                 <!-- Nút xem phim -->
                 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn-primary">
@@ -96,13 +106,13 @@
             </div>
         </section>
         
-        <!-- 2. Về Phim (CÓ TÍNH NĂNG AI) -->
+        <!-- 2. Về Phim -->
         <section id="ve-phim" class="py-20 bg-gray-900">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-bold text-white text-center mb-12 border-b-2 border-red-600 pb-2 inline-block mx-auto">VỀ PHIM</h2>
 
                 <!-- Tóm tắt & Thông điệp -->
-                <div class="grid md:grid-cols-2 gap-12 mb-8">
+                <div class="grid md:grid-cols-2 gap-12 mb-16">
                     <div>
                         <h3 class="text-2xl font-semibold text-red-500 mb-4">Tóm Tắt Cốt Truyện (Gợi Mở)</h3>
                         <p class="text-gray-400 leading-relaxed" id="synopsis-text">
@@ -115,15 +125,6 @@
                             "Sống Lớn Hơn Chính Mình" không có nghĩa là trở nên vĩ đại hay nổi tiếng. Thông điệp cốt lõi là khả năng kết nối, thấu hiểu và tạo ra giá trị tích cực cho cộng đồng xung quanh. Bộ phim khẳng định rằng, mỗi hành động nhỏ, mỗi sự quan tâm chân thành đều có thể tạo nên sự khác biệt lớn, giúp chúng ta nhìn thấy bức tranh rộng hơn ngoài những lợi ích cá nhân.
                         </p>
                     </div>
-                </div>
-
-                <!-- Tính năng AI: Phân Tích Chuyên Sâu Chủ Đề -->
-                <div class="bg-gray-800 p-6 rounded-xl shadow-2xl mb-16 text-center">
-                    <button id="analyze-theme-btn" onclick="analyzeTheme()" class="btn-ai">
-                        <span id="analyze-theme-icon">✨</span> Phân Tích Chuyên Sâu Chủ Đề & Tagline
-                    </button>
-                    <div id="theme-analysis-output" class="ai-output-box hidden text-left"></div>
-                    <p id="theme-analysis-loading" class="mt-4 text-yellow-500 hidden">Đang gọi Gemini... Xin chờ trong giây lát.</p>
                 </div>
                 
                 <!-- Quá trình thực hiện -->
@@ -139,8 +140,8 @@
                 <div>
                     <h3 class="text-3xl font-bold text-white mb-8 text-center">📸 Gallery Ảnh Hậu Trường (Behind The Scenes)</h3>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <img class="w-full h-40 object-cover rounded-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer" src="./IMG_9318.png" alt="[Ảnh hậu trường 1]">
-                        <img class="w-full h-40 object-cover rounded-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer" src="./IMG_9376.png" alt="[Ảnh hậu trường 2]">
+                        <img class="w-full h-40 object-cover rounded-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer" src="./assets/IMG_9318.png" alt="[Ảnh hậu trường 1]">
+                        <img class="w-full h-40 object-cover rounded-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer" src="./assets/IMG_9376.png" alt="[Ảnh hậu trường 2]">
                         <img class="w-full h-40 object-cover rounded-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer" src="https://placehold.co/400x300/3d3d3d/ffffff?text=Cảnh+Đẹp+1" alt="[Ảnh cảnh quay đẹp 1]">
                         <img class="w-full h-40 object-cover rounded-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer" src="https://placehold.co/400x300/3d3d3d/ffffff?text=Cảnh+Đẹp+2" alt="[Ảnh cảnh quay đẹp 2]">
                     </div>
@@ -230,26 +231,16 @@
             </div>
         </section>
 
-        <!-- 5. Tin Tức/Bài Viết (CÓ TÍNH NĂNG AI) -->
+        <!-- 5. Tin Tức/Bài Viết (KHÔNG CÒN AI) -->
         <section id="tin-tuc" class="py-20 bg-black">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-bold text-white text-center mb-12 border-b-2 border-red-600 pb-2 inline-block mx-auto">TIN TỨC & CẢM NGHĨ</h2>
-
-                <!-- Tính năng AI: Gợi Ý Bài Viết Tin Tức -->
-                <div class="bg-gray-900 p-6 rounded-xl shadow-2xl mb-8 text-center">
-                    <p class="text-gray-400 mb-4 text-sm">Hiện đã hoàn thành 5/12 cảnh quay. Dùng AI để gợi ý nội dung bài viết tiếp theo.</p>
-                    <button id="generate-news-btn" onclick="generateNewsIdeas()" class="btn-ai">
-                        <span id="generate-news-icon">✨</span> Gợi Ý 5 Ý Tưởng Bài Viết
-                    </button>
-                    <div id="news-ideas-output" class="ai-output-box hidden text-left"></div>
-                    <p id="news-ideas-loading" class="mt-4 text-yellow-500 hidden">Đang gọi Gemini... Xin chờ trong giây lát.</p>
-                </div>
 
                 <div class="grid md:grid-cols-3 gap-8">
                     <!-- Bài viết 1: Cảm nghĩ -->
                     <div class="bg-gray-800 rounded-xl p-6 shadow-xl hover:shadow-red-900/50 transition duration-300">
                         <h3 class="text-xl font-bold text-red-500 mb-2">Cảm nghĩ sau khi đóng máy: Lửa nhiệt không tắt</h3>
-                        <p class="text-sm text-gray-400 mb-3">Ngày đăng: 15/10/2024</p>
+                        <p class="text-sm text-gray-400 mb-3">Ngày đăng: 13/12/2025</p>
                         <p class="text-gray-500 text-sm line-clamp-4">
                             Hơn cả một dự án, "Sống Lớn Hơn Chính Mình" là một hành trình tự hoàn thiện của từng thành viên. Bài viết chia sẻ những cảm xúc chân thật nhất của đạo diễn về sự cống hiến, những giọt nước mắt, và tinh thần đồng đội không thể nào quên...
                         </p>
@@ -280,59 +271,56 @@
             </div>
         </section>
 
-        <!-- 6. Liên Hệ -->
-        <section id="lien-he" class="py-20 bg-gray-900">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-bold text-white text-center mb-12 border-b-2 border-red-600 pb-2 inline-block mx-auto">LIÊN HỆ</h2>
+        <!-- 6. Công Cụ & Công Nghệ (Thay thế cho Liên Hệ) -->
+        <section id="cong-cu" class="py-20 bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-white text-center mb-12 border-b-2 border-red-600 pb-2 inline-block mx-auto">CÔNG CỤ & CÔNG NGHỆ</h2>
 
-                <div class="bg-gray-800 p-8 rounded-xl shadow-2xl">
-                    <form onsubmit="handleContact(event)">
-                        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Họ tên</label>
-                                <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-700 text-white focus:ring-red-500 focus:border-red-500 transition">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
-                                <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-700 text-white focus:ring-red-500 focus:border-red-500 transition">
-                            </div>
-                        </div>
-                        <div class="mt-6">
-                            <label for="subject" class="block text-sm font-medium text-gray-300 mb-1">Tiêu đề</label>
-                            <input type="text" id="subject" name="subject" required class="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-700 text-white focus:ring-red-500 focus:border-red-500 transition">
-                        </div>
-                        <div class="mt-6">
-                            <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Nội dung tin nhắn</label>
-                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-700 text-white focus:ring-red-500 focus:border-red-500 transition"></textarea>
-                        </div>
-                        <div class="mt-8 text-center">
-                            <button type="submit" class="btn-primary">
-                                Gửi Tin Nhắn
-                            </button>
-                        </div>
-                    </form>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
                     
-                    <!-- Thông tin liên hệ trực tiếp và Mạng xã hội -->
-                    <div class="mt-12 text-center border-t border-gray-700 pt-8">
-                        <h4 class="text-xl font-semibold text-white mb-4">Hoặc Liên Hệ Trực Tiếp</h4>
-                        <p class="text-gray-400 mb-2">Email: <a href="mailto:contact@phimngan.vn" class="text-red-500 hover:text-red-400">contact@phimngan.vn</a></p>
-                        <p class="text-gray-400">Điện thoại: (090) 123-4567</p>
-
-                        <div class="flex justify-center space-x-6 mt-6">
-                            <!-- Facebook -->
-                            <a href="#" target="_blank" class="text-gray-400 hover:text-red-500 transition duration-200" aria-label="Facebook">
-                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 5.088 3.708 9.38 8.583 10.15V14.73h-2.92v-3.37h2.92V9.3c0-2.883 1.76-4.47 4.33-4.47 1.229 0 2.288.088 2.593.127v3.012h-1.782c-1.4 0-1.674.667-1.674 1.64v2.14h3.333l-.54 3.37h-2.793v7.42C18.292 21.38 22 17.088 22 12c0-5.523-4.477-10-10-10z"/></svg>
-                            </a>
-                            <!-- Instagram -->
-                            <a href="#" target="_blank" class="text-gray-400 hover:text-red-500 transition duration-200" aria-label="Instagram">
-                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c2.716 0 3.056.01 4.123.06 1.065.05 1.794.22 2.457.464.673.25 1.258.603 1.83 1.176.572.572.926 1.157 1.176 1.83.244.663.414 1.392.464 2.457.05 1.067.06 1.407.06 4.123s-.01 3.056-.06 4.123c-.05 1.065-.22 1.794-.464 2.457-.25.673-.603 1.258-1.176 1.83-.572.572-1.157.926-1.83 1.176-.663.244-1.392.414-2.457.464-1.067.05-1.407.06-4.123.06s-3.056-.01-4.123-.06c-1.065-.05-1.794-.22-2.457-.464-.673-.25-1.258-.603-1.83-1.176-.572-.572-.926-1.157-1.176-1.83-.244-.663-.414-1.392-.464-2.457-.05-1.067-.06-1.407-.06-4.123s.01-3.056.06-4.123c.05-1.065.22-1.794.464-2.457.25-.673.603-1.258 1.176-1.83.572-.572 1.157-.926 1.83-1.176.663-.244 1.392.414 2.457.464C8.944 2.01 9.284 2 12 2zm0 1.98c-2.673 0-3.02.01-4.085.06-.976.046-1.576.21-1.956.346-.41.144-.648.337-.887.576-.239.239-.432.477-.576.887-.136.38-.3.98-.346 1.956-.05 1.065-.06 1.412-.06 4.085s.01 3.02.06 4.085c.046.976.21 1.576.346 1.956.144.41.337.648.576.887.239.239.477.432.887.576.38.136.98.3 1.956.346 1.065.05 1.412.06 4.085.06s3.02-.01 4.085-.06c.976-.046 1.576-.21 1.956-.346.41-.144.648-.337.887-.576.239.239.477.432.887.576.38.136.98.3 1.956.346C15.02 3.99 14.673 3.98 12 3.98zm0 3.5c2.485 0 4.5 2.015 4.5 4.5s-2.015 4.5-4.5 4.5-4.5-2.015-4.5-4.5 2.015-4.5 4.5-4.5zm0 1.98c-1.398 0-2.52 1.122-2.52 2.52s1.122 2.52 2.52 2.52 2.52-1.122 2.52-2.52-1.122-2.52-2.52-2.52zm6.2-4.14a1.05 1.05 0 011.05 1.05 1.05 1.05 0 01-1.05 1.05 1.05 1.05 0 01-1.05-1.05 1.05 1.05 0 011.05-1.05z"/></svg>
-                            </a>
-                            <!-- TikTok/Other -->
-                             <a href="#" target="_blank" class="text-gray-400 hover:text-red-500 transition duration-200" aria-label="TikTok">
-                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm2.5 13.5c0 .276-.224.5-.5.5H9c-.276 0-.5-.224-.5-.5v-4h3.5v-1h-3.5V8c0-.276.224-.5.5-.5h2.5c.276 0 .5.224.5.5v2.5h-2.5v1h2.5v3.5zm-5.5-5.5c0-.276.224-.5.5-.5h2.5v1H9.5v-.5z"/></svg>
-                            </a>
+                    <!-- Premiere Pro -->
+                    <a href = "#" class="bg-gray-800 p-8 rounded-xl shadow-2xl hover:bg-gray-700 transition duration-300 group">
+                        <div class="w-20 h-20 mx-auto mb-6 bg-purple-900/50 rounded-2xl flex items-center justify-center group-hover:scale-110 transition duration-300 border border-purple-500/30">
+                            <!-- SVG Premiere Pro Icon Placeholder -->
+                            <svg class="w-10 h-10 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M7 7h2v5"></path>
+                                <path d="M7 17v-5h4a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H7"></path>
+                                <path d="M14 7h1.5a2.5 2.5 0 0 1 2.5 2.5v.5"></path>
+                            </svg>
                         </div>
-                    </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Adobe Premiere Pro</h3>
+                        <p class="text-purple-400 font-medium mb-4">Dựng Phim & Hậu Kỳ</p>
+                        <p class="text-gray-400 text-sm">Công cụ chỉnh sửa video chuyên nghiệp giúp tạo nên những thước phim đầy cảm xúc và mượt mà.</p>
+                    </a>
+
+                    <!-- GitHub -->
+                    <a  href = "https://github.com/smile211107/DoAn-KyNangMem" class="bg-gray-800 p-8 rounded-xl shadow-2xl hover:bg-gray-700 transition duration-300 group">
+    
+                        <div class="w-20 h-20 mx-auto mb-6 bg-gray-700/50 rounded-2xl flex items-center justify-center group-hover:scale-110 transition duration-300 border border-gray-500/30">
+                            <!-- SVG GitHub Icon -->
+                            <svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">GitHub</h3>
+                        <p class="text-gray-300 font-medium mb-4">Quản Lý Dự Án & Mã Nguồn</p>
+                        <p class="text-gray-400 text-sm">Nền tảng lưu trữ và quản lý mã nguồn website, hỗ trợ làm việc nhóm hiệu quả và minh bạch.</p>
+                    </a>
+                    <!-- Canva -->
+                    <a href = "https://www.canva.com/" class="bg-gray-800 p-8 rounded-xl shadow-2xl hover:bg-gray-700 transition duration-300 group">
+                        <div class="w-20 h-20 mx-auto mb-6 bg-blue-900/50 rounded-2xl flex items-center justify-center group-hover:scale-110 transition duration-300 border border-blue-400/30">
+                            <!-- SVG Canva/Design Icon Placeholder -->
+                            <svg class="w-10 h-10 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M8 12a4 4 0 1 0 8 0"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Canva</h3>
+                        <p class="text-blue-400 font-medium mb-4">Thiết Kế Truyền Thông</p>
+                        <p class="text-gray-400 text-sm">Công cụ thiết kế đồ họa linh hoạt, được sử dụng để tạo poster, banner và các ấn phẩm quảng bá cho phim.</p>
+                    </a>
+
                 </div>
             </div>
         </section>
@@ -340,154 +328,16 @@
 
     <!-- Footer -->
     <footer class="bg-black border-t border-gray-800 py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
-            <p>&copy; 2024 Phim Ngắn: Sống Lớn Hơn Chính Mình. Mọi quyền được bảo lưu.</p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm">
+            <p class="text-gray-500 text-center md:text-left">&copy; 2024 Phim Ngắn: Sống Lớn Hơn Chính Mình. Mọi quyền được bảo lưu.</p>
+            <div class="mt-4 md:mt-0">
+                <a href="mailto:contact@phimngan.vn" class="text-gray-500 hover:text-white transition">Liên hệ: contact@phimngan.vn</a>
+            </div>
         </div>
     </footer>
 
-    <!-- JavaScript cho chức năng cuộn mượt, xử lý form và GEMINI API -->
+    <!-- JavaScript cho chức năng cuộn mượt, xử lý form -->
     <script>
-        // --- CẤU HÌNH VÀ HÀM LLM CHUNG ---
-        const GEMINI_MODEL = 'gemini-2.5-flash-preview-09-2025';
-        const apiKey = ""; // Canvas sẽ cung cấp API Key khi chạy
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
-
-        // Hàm hỗ trợ gọi API với cơ chế Exponential Backoff
-        async function callGeminiApi(userQuery, systemPrompt, useSearchGrounding = false, maxRetries = 3) {
-            const payload = {
-                contents: [{ parts: [{ text: userQuery }] }],
-                systemInstruction: { parts: [{ text: systemPrompt }] },
-            };
-
-            if (useSearchGrounding) {
-                payload.tools = [{ "google_search": {} }];
-            }
-
-            for (let attempt = 0; attempt < maxRetries; attempt++) {
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (response.status === 429 && attempt < maxRetries - 1) {
-                        const delay = Math.pow(2, attempt) * 1000 + Math.random() * 1000;
-                        await new Promise(resolve => setTimeout(resolve, delay));
-                        continue;
-                    }
-
-                    if (!response.ok) {
-                        throw new Error(`Lỗi HTTP: ${response.status}`);
-                    }
-
-                    const result = await response.json();
-                    const candidate = result.candidates?.[0];
-
-                    if (candidate && candidate.content?.parts?.[0]?.text) {
-                        const text = candidate.content.parts[0].text;
-                        let sources = [];
-                        const groundingMetadata = candidate.groundingMetadata;
-                        
-                        if (groundingMetadata && groundingMetadata.groundingAttributions) {
-                            sources = groundingMetadata.groundingAttributions
-                                .map(attr => ({
-                                    uri: attr.web?.uri,
-                                    title: attr.web?.title,
-                                }))
-                                .filter(source => source.uri && source.title);
-                        }
-                        return { text, sources };
-                    }
-                    throw new Error("Không tìm thấy nội dung phản hồi từ Gemini.");
-
-                } catch (error) {
-                    if (attempt === maxRetries - 1) {
-                        console.error("Lỗi Gemini API sau nhiều lần thử:", error);
-                        return { text: `Đã xảy ra lỗi khi gọi Gemini: ${error.message}`, sources: [] };
-                    }
-                }
-            }
-            return { text: "Thất bại khi gọi API sau nhiều lần thử.", sources: [] };
-        }
-
-        // --- TÍNH NĂNG AI 1: GỢI Ý BÀI VIẾT TIN TỨC ---
-        async function generateNewsIdeas() {
-            const btn = document.getElementById('generate-news-btn');
-            const loading = document.getElementById('news-ideas-loading');
-            const outputDiv = document.getElementById('news-ideas-output');
-            
-            btn.disabled = true;
-            loading.classList.remove('hidden');
-            outputDiv.classList.add('hidden');
-            outputDiv.innerHTML = '';
-            document.getElementById('generate-news-icon').innerHTML = 'Đang tạo...';
-
-            const progress = "Đã hoàn thành 5/12 cảnh quay.";
-            const theme = "Phim ngắn 'Sống Lớn Hơn Chính Mình' về giới trẻ đối diện áp lực, tìm kiếm giá trị cộng đồng và sức mạnh tập thể.";
-            
-            const userQuery = `Dựa trên tiến độ hiện tại là "${progress}" và chủ đề phim là "${theme}", hãy đề xuất 5 tiêu đề bài viết tin tức hoặc nội dung blog hấp dẫn để đăng trên website. Mục đích là để thu hút khán giả và tạo sự đồng cảm.`;
-            const systemPrompt = "Bạn là chuyên gia marketing và truyền thông cho một dự án phim ngắn độc lập. Hãy đưa ra 5 tiêu đề và mô tả ngắn gọn (30 chữ) cho mỗi ý tưởng, tập trung vào yếu tố hậu trường, cảm xúc và sự gắn kết của đội ngũ. Phản hồi bằng tiếng Việt và sử dụng định dạng Markdown (Danh sách có dấu *).";
-
-            const result = await callGeminiApi(userQuery, systemPrompt, true);
-
-            loading.classList.add('hidden');
-            btn.disabled = false;
-            document.getElementById('generate-news-icon').innerHTML = '✨';
-            outputDiv.classList.remove('hidden');
-
-            // Chuyển Markdown sang HTML đơn giản
-            let htmlContent = result.text
-                .replace(/\*\s/g, '• ')
-                .replace(/### (.*)/g, '<h4 class="text-lg font-bold text-yellow-300 mt-4 mb-2">$1</h4>')
-                .replace(/\n/g, '<br>');
-            
-            outputDiv.innerHTML = `<h3 class="text-xl font-bold text-yellow-400 mb-3">5 Ý Tưởng Bài Viết (Do AI Gợi Ý)</h3><div class="space-y-3">${htmlContent}</div>`;
-            
-            if (result.sources.length > 0) {
-                let sourceHtml = '<p class="mt-4 text-xs text-gray-500 italic">Tham khảo từ: ';
-                result.sources.forEach(source => {
-                    sourceHtml += `<a href="${source.uri}" target="_blank" class="hover:underline text-gray-400 mr-2">${source.title}</a>`;
-                });
-                sourceHtml += '</p>';
-                outputDiv.innerHTML += sourceHtml;
-            }
-        }
-
-        // --- TÍNH NĂNG AI 2: PHÂN TÍCH CHUYÊN SÂU CHỦ ĐỀ ---
-        async function analyzeTheme() {
-            const btn = document.getElementById('analyze-theme-btn');
-            const loading = document.getElementById('theme-analysis-loading');
-            const outputDiv = document.getElementById('theme-analysis-output');
-            
-            btn.disabled = true;
-            loading.classList.remove('hidden');
-            outputDiv.classList.add('hidden');
-            outputDiv.innerHTML = '';
-            document.getElementById('analyze-theme-icon').innerHTML = 'Đang phân tích...';
-
-            const synopsis = document.getElementById('synopsis-text').innerText;
-            const theme = document.getElementById('theme-text').innerText;
-            
-            const userQuery = `Đây là Tóm tắt: "${synopsis}" và Thông điệp: "${theme}". Yêu cầu: 1. Đưa ra 3 câu tagline (khẩu hiệu) mạnh mẽ, ngắn gọn (dưới 10 chữ) để quảng bá phim. 2. Viết một đoạn phân tích sâu 3-4 dòng về sự mâu thuẫn chính trong thông điệp "Sống Lớn Hơn Chính Mình".`;
-            const systemPrompt = "Bạn là chuyên gia phê bình điện ảnh và copywriter. Phản hồi bằng tiếng Việt và phân tách rõ ràng 2 phần. Sử dụng tiêu đề Markdown.";
-
-            const result = await callGeminiApi(userQuery, systemPrompt, false); // Không dùng Search Grounding cho phân tích nội tại
-
-            loading.classList.add('hidden');
-            btn.disabled = false;
-            document.getElementById('analyze-theme-icon').innerHTML = '✨';
-            outputDiv.classList.remove('hidden');
-
-            // Chuyển Markdown sang HTML đơn giản
-            let htmlContent = result.text
-                .replace(/### (.*)/g, '<h4 class="text-lg font-bold text-yellow-300 mt-4 mb-2">$1</h4>')
-                .replace(/\n/g, '<br>');
-            
-            outputDiv.innerHTML = `<h3 class="text-xl font-bold text-yellow-400 mb-3">Phân Tích & Khẩu Hiệu (Do AI Gợi Ý)</h3><div class="space-y-3">${htmlContent}</div>`;
-        }
-
-
         // --- HÀM HỖ TRỢ CHUNG ---
 
         // Hàm cuộn mượt đến các section
@@ -497,21 +347,6 @@
                 // Sử dụng hàm scrollIntoView để cuộn mượt
                 section.scrollIntoView({ behavior: 'smooth' });
             }
-        }
-
-        // Xử lý Form Liên Hệ
-        function handleContact(event) {
-            event.preventDefault();
-            // Lấy dữ liệu form (chỉ là demo, không gửi đi thật)
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            
-            // Hiển thị modal thông báo (thay vì alert())
-            showNotification(`Cảm ơn bạn ${name}!`, `Tin nhắn của bạn với tiêu đề "${subject}" đã được nhóm làm phim ghi nhận. Chúng tôi sẽ phản hồi sớm nhất qua email ${email}.`);
-            
-            // Xóa form sau khi gửi
-            event.target.reset();
         }
 
         // Tạo Modal/Message Box tùy chỉnh (thay thế cho alert/confirm)
