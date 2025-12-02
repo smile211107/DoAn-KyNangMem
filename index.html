@@ -59,7 +59,8 @@
             <div class="space-x-4 hidden md:flex">
                 <a href="#trang-chu" class="text-gray-300 hover:text-white transition duration-200" onclick="scrollToSection('trang-chu')">Trang chủ</a>
                 <a href="#ve-phim" class="text-gray-300 hover:text-white transition duration-200" onclick="scrollToSection('ve-phim')">Về phim</a>
-                <a href="#dien-vien-doi-ngu" class="text-gray-300 hover:text-white transition duration-200" onclick="scrollToSection('dien-vien-doi-ngu')">Diễn viên & Đội ngũ</a>
+                <a href="#dien-vien-doi-ngu" class="text-gray-300 hover:text-white transition duration-200" onclick="scrollToSection('dien-vien-doi-ngu')">Thành viên</a>
+                <a href="#hoat-dong" class="text-gray-300 hover:text-white transition duration-200" onclick="scrollToSection('hoat-dong')">Hoạt động</a>
                 <a href="#tin-tuc" class="text-gray-300 hover:text-white transition duration-200" onclick="scrollToSection('tin-tuc')">Tin tức</a>
                 <a href="#cong-cu" class="text-gray-300 hover:text-white transition duration-200" onclick="scrollToSection('cong-cu')">Công cụ</a>
             </div>
@@ -140,8 +141,8 @@
                 <div>
                     <h3 class="text-3xl font-bold text-white mb-8 text-center">📸 Gallery Ảnh Hậu Trường (Behind The Scenes)</h3>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <img class="w-full h-40 object-cover rounded-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer" src="./assets/IMG_9318.png" alt="[Ảnh hậu trường 1]">
-                        <img class="w-full h-40 object-cover rounded-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer" src="./assets/IMG_9376.png" alt="[Ảnh hậu trường 2]">
+                        <img class="w-full h-40 object-cover rounded-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer" src="./assets/highlight/IMG_9318.png" alt="[Ảnh hậu trường 1]">
+                        <img class="w-full h-40 object-cover rounded-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer" src="./assets/highlight/IMG_9376.png" alt="[Ảnh hậu trường 2]">
                         <img class="w-full h-40 object-cover rounded-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer" src="https://placehold.co/400x300/3d3d3d/ffffff?text=Cảnh+Đẹp+1" alt="[Ảnh cảnh quay đẹp 1]">
                         <img class="w-full h-40 object-cover rounded-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer" src="https://placehold.co/400x300/3d3d3d/ffffff?text=Cảnh+Đẹp+2" alt="[Ảnh cảnh quay đẹp 2]">
                     </div>
@@ -247,6 +248,54 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+        </section>
+
+        <!-- 3.5. Hoạt Động Bên Lề (Đã cập nhật để bấm vào được) -->
+        <section id="hoat-dong" class="py-20 bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-white text-center mb-12 border-b-2 border-red-600 pb-2 inline-block mx-auto">HOẠT ĐỘNG BÊN LỀ</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    
+                    <!-- Hoạt động 1: Xây Cầu -->
+                    <div onclick="showActivityModal('Xây Cầu', 'https://placehold.co/400x300/222/fff?text=Xay+Cau', 'Hoạt động Xây Cầu là thử thách kết hợp giữa kiến thức vật lý và tinh thần đồng đội. Các đội sử dụng vật liệu giới hạn (que kem, ống hút) để xây dựng cây cầu chịu lực tốt nhất. Qua đó rèn luyện tư duy kết cấu, phân chia công việc và giải quyết vấn đề.')" class="bg-gray-800 rounded-xl p-6 shadow-xl hover:shadow-red-900/50 transition duration-300 text-center cursor-pointer group">
+                        <div class="w-16 h-16 bg-red-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-red-600/40 transition">
+                            <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-red-400 transition">Xây Cầu</h3>
+                        <p class="text-gray-400 text-sm mb-4">Thử thách kỹ thuật và sự khéo léo trong việc xây dựng mô hình cầu chịu lực.</p>
+                        <img src="https://placehold.co/400x300/222/fff?text=Xay+Cau" alt="Hoạt động xây cầu" class="rounded-lg w-full h-48 object-cover">
+                        <p class="text-red-500 text-xs mt-3 font-medium opacity-0 group-hover:opacity-100 transition">Bấm để xem chi tiết</p>
+                    </div>
+
+                    <!-- Hoạt động 2: Egg Dropper -->
+                    <div onclick="showActivityModal('Egg Dropper', './assets/other_activities/eggdropper.jpg', 'Thử thách Egg Dropper yêu cầu các đội thiết kế thiết bị bảo vệ trứng rơi từ độ cao 5m. Bài học về sáng tạo không giới hạn, tính toán lực cản và gia tốc để đảm bảo an toàn cho quả trứng mong manh.')" class="bg-gray-800 rounded-xl p-6 shadow-xl hover:shadow-red-900/50 transition duration-300 text-center cursor-pointer group">
+                        <div class="w-16 h-16 bg-red-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-red-600/40 transition">
+                            <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-red-400 transition">Egg Dropper</h3>
+                        <p class="text-gray-400 text-sm mb-4">Sáng tạo thiết bị bảo vệ trứng rơi từ trên cao, rèn luyện tư duy vật lý.</p>
+                        <img src="./assets/other_activities/eggdropper.jpg" alt="Hoạt động Egg Dropper" class="rounded-lg w-full h-48 object-cover">
+                        <p class="text-red-500 text-xs mt-3 font-medium opacity-0 group-hover:opacity-100 transition">Bấm để xem chi tiết</p>
+                    </div>
+
+                    <!-- Hoạt động 3: Sinh Tồn -->
+                    <div onclick="showActivityModal('Sinh Tồn Ngoài Biển', 'https://placehold.co/400x300/222/fff?text=Sinh+Ton', 'Trong tình huống giả định lạc trên biển, các đội phải ra quyết định sinh tử về phân chia lương thực, nước uống và phát tín hiệu cầu cứu. Hoạt động đề cao kỹ năng lãnh đạo, làm việc nhóm và thấu hiểu đồng đội.')" class="bg-gray-800 rounded-xl p-6 shadow-xl hover:shadow-red-900/50 transition duration-300 text-center cursor-pointer group">
+                        <div class="w-16 h-16 bg-red-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-red-600/40 transition">
+                            <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-red-400 transition">Sinh Tồn Ngoài Biển</h3>
+                        <p class="text-gray-400 text-sm mb-4">Trải nghiệm kỹ năng sinh tồn, làm việc nhóm trong môi trường giả định trên biển.</p>
+                        <img src="https://placehold.co/400x300/222/fff?text=Sinh+Ton" alt="Hoạt động sinh tồn" class="rounded-lg w-full h-48 object-cover">
+                        <p class="text-red-500 text-xs mt-3 font-medium opacity-0 group-hover:opacity-100 transition">Bấm để xem chi tiết</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -413,10 +462,9 @@
             }
         }
         
-        // HÀM MỚI: MÔ PHỎNG TRANG XEM BÀI VIẾT
+        // HÀM MỚI: MÔ PHỎNG TRANG XEM BÀI VIẾT (TIN TỨC)
         function showPlaceholderPage(articleTitle) {
             // Loại bỏ các modal/placeholder cũ
-            closeModal();
             const existingPlaceholder = document.getElementById('article-placeholder');
             if (existingPlaceholder) existingPlaceholder.remove();
 
@@ -454,6 +502,35 @@
             `;
             document.body.insertAdjacentHTML('beforeend', placeholderHtml);
             document.body.style.overflow = 'hidden'; // Chặn cuộn trang chính
+        }
+
+        // HÀM MỚI: HIỂN THỊ CHI TIẾT HOẠT ĐỘNG (MODAL)
+        function showActivityModal(title, imgSrc, description) {
+            // Remove existing modal if any
+            const existing = document.getElementById('activity-modal');
+            if (existing) existing.remove();
+
+            const modalHtml = `
+                <div id="activity-modal" class="fixed inset-0 bg-black/95 z-[100] overflow-y-auto flex items-center justify-center p-4">
+                    <div class="relative bg-gray-900 rounded-2xl max-w-2xl w-full p-8 shadow-2xl border border-gray-800 transform transition-all scale-100">
+                        <button onclick="document.getElementById('activity-modal').remove(); document.body.style.overflow = ''" class="absolute top-4 right-4 text-gray-400 hover:text-white transition">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </button>
+                        
+                        <h2 class="text-3xl font-bold text-white mb-6 text-center text-red-500 border-b border-gray-800 pb-4">${title}</h2>
+                        <img src="${imgSrc}" alt="${title}" class="w-full h-64 object-cover rounded-xl mb-6 shadow-lg border border-gray-700">
+                        
+                        <div class="text-gray-300 space-y-4 leading-relaxed text-lg">
+                            <p>${description}</p>
+                            <p class="text-gray-400 italic text-base mt-4 border-t border-gray-800 pt-4">
+                                "Những hoạt động này không chỉ là trò chơi, mà là cơ hội để chúng tôi thấu hiểu nhau hơn, cùng nhau vượt qua giới hạn của bản thân - đúng như tinh thần của bộ phim."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', modalHtml);
+            document.body.style.overflow = 'hidden';
         }
 
         // HÀM MỚI: ĐÓNG TRANG XEM BÀI VIẾT
