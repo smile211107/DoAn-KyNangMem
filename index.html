@@ -74,7 +74,7 @@
         <!-- 1. Trang Chủ (Hero Section) -->
         <section id="trang-chu" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
             <!-- Poster phim lớn (Placeholder) -->
-            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/poster.jpg'); opacity: 0.3;"></div>
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/bg.jpg'); opacity: 0.3;"></div>
             <!-- Lớp phủ gradient để làm nổi bật chữ -->
             <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-5"></div>
             
@@ -170,63 +170,83 @@
         <!-- 3. Diễn viên và Đội ngũ -->
         <section id="dien-vien-doi-ngu" class="py-20 bg-black">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-bold text-white text-center mb-12 border-b-2 border-red-600 pb-2 inline-block mx-auto">DIỄN VIÊN & ĐỘI NGŨ</h2>
+                <h2 class="text-4xl font-bold text-white text-center mb-12 border-b-2 border-red-600 pb-2 inline-block mx-auto">THÀNH VIÊN DỰ ÁN</h2>
 
-                <h3 class="text-3xl font-semibold text-red-500 mb-8 text-center">Diễn Viên Chính</h3>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-16">
-                    <!-- Diễn viên 1 -->
-                    <div class="text-center">
-                        <img class="w-32 h-32 mx-auto rounded-full object-cover shadow-xl border-4 border-red-600 mb-3" src="https://placehold.co/200x200/555/ffffff?text=DV+An" alt="[Ảnh Diễn viên An]">
-                        <p class="text-xl font-bold text-white">Trần Văn An</p>
-                        <p class="text-sm text-gray-400">Vai: Nhân vật chính</p>
-                        <p class="text-xs italic text-gray-500 mt-1">Là trụ cột cảm xúc của phim.</p>
+                <!-- Grid 3 cột (3 người/dòng), khoảng cách rộng thoáng -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    
+                    <!-- Thành viên 1: Đạo Diễn -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg group hover:shadow-red-900/40 transition duration-300">
+                        <div class="relative overflow-hidden">
+                            <img class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-500" src="./assets/personal/ttai.JPG" alt="Nguyễn Lý Thành Tài">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <p class="text-white font-bold text-xl">Nguyễn Lý Thành Tài</p>
+                                <p class="text-red-500 font-medium text-sm">Trưởng nhóm, editor</p>
+                            </div>
+                        </div>
                     </div>
-                    <!-- Diễn viên 2 -->
-                    <div class="text-center">
-                        <img class="w-32 h-32 mx-auto rounded-full object-cover shadow-xl border-4 border-red-600 mb-3" src="https://placehold.co/200x200/555/ffffff?text=DV+Hương" alt="[Ảnh Diễn viên Hương]">
-                        <p class="text-xl font-bold text-white">Lê Thị Hương</p>
-                        <p class="text-sm text-gray-400">Vai: Bạn thân An</p>
-                        <p class="text-xs italic text-gray-500 mt-1">Đem lại sự lạc quan, hài hước.</p>
-                    </div>
-                    <!-- Diễn viên 3 -->
-                    <div class="text-center">
-                        <img class="w-32 h-32 mx-auto rounded-full object-cover shadow-xl border-4 border-red-600 mb-3" src="https://placehold.co/200x200/555/ffffff?text=DV+Minh" alt="[Ảnh Diễn viên Minh]">
-                        <p class="text-xl font-bold text-white">Nguyễn Hoàng Minh</p>
-                        <p class="text-sm text-gray-400">Vai: Đối thủ / Đồng minh</p>
-                        <p class="text-xs italic text-gray-500 mt-1">Nhân vật phản diện có chiều sâu.</p>
-                    </div>
-                </div>
 
-                <h3 class="text-3xl font-semibold text-red-500 mb-8 text-center">Đội Ngũ Sản Xuất</h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                    <!-- Đạo diễn -->
-                    <div class="text-center">
-                        <img class="w-24 h-24 mx-auto rounded-full object-cover shadow-xl border-2 border-gray-500 mb-3" src="https://placehold.co/200x200/333/ffffff?text=Đạo+Diễn" alt="[Ảnh Đạo diễn]">
-                        <p class="text-lg font-bold text-white">Phạm Trung Tín</p>
-                        <p class="text-sm text-red-600">Đạo Diễn</p>
-                        <p class="text-xs text-gray-500 mt-1">Người kiến tạo tầm nhìn cho bộ phim.</p>
+                    <!-- Thành viên 2: Nam Chính -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg group hover:shadow-red-900/40 transition duration-300">
+                        <div class="relative overflow-hidden">
+                            <img class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-500" src="./assets/personal/qhung.jpeg" alt="Vương Quốc Hưng">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <p class="text-white font-bold text-xl">Vương Quốc Hưng</p>
+                                <p class="text-red-500 font-medium text-sm">Diễn Viên Chính (Vai ...)</p>
+                            </div>
+                        </div>
                     </div>
-                    <!-- Quay phim -->
-                    <div class="text-center">
-                        <img class="w-24 h-24 mx-auto rounded-full object-cover shadow-xl border-2 border-gray-500 mb-3" src="https://placehold.co/200x200/333/ffffff?text=Quay+Phim" alt="[Ảnh Quay phim]">
-                        <p class="text-lg font-bold text-white">Võ Thanh Hải</p>
-                        <p class="text-sm text-red-600">Quay Phim (DOP)</p>
-                        <p class="text-xs text-gray-500 mt-1">Bắt trọn từng khung hình cảm xúc.</p>
+
+                    <!-- Thành viên 3: Nữ Chính -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg group hover:shadow-red-900/40 transition duration-300">
+                        <div class="relative overflow-hidden">
+                            <img class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-500" src="./assets/personal/yngoc.JPG" alt="Lâm Yến Ngọc">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <p class="text-white font-bold text-xl">Lâm Yến Ngọc</p>
+                                <p class="text-red-500 font-medium text-sm">vai trò</p>
+                            </div>
+                        </div>
                     </div>
-                    <!-- Biên kịch -->
-                    <div class="text-center">
-                        <img class="w-24 h-24 mx-auto rounded-full object-cover shadow-xl border-2 border-gray-500 mb-3" src="https://placehold.co/200x200/333/ffffff?text=Biên+Kịch" alt="[Ảnh Biên kịch]">
-                        <p class="text-lg font-bold text-white">Đỗ Ngọc Mai</p>
-                        <p class="text-sm text-red-600">Biên Kịch</p>
-                        <p class="text-xs text-gray-500 mt-1">Linh hồn của câu chuyện.</p>
+
+                    <!-- Thành viên 4: Quay Phim -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg group hover:shadow-red-900/40 transition duration-300">
+                        <div class="relative overflow-hidden">
+                            <img class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-500" src="./assets/personal/akhoa.jpeg" alt="Trần Nguyễn Anh Khoa">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <p class="text-white font-bold text-xl">Trần Nguyễn Anh Khoa</p>
+                                <p class="text-red-500 font-medium text-sm">vai trò</p>
+                            </div>
+                        </div>
                     </div>
-                    <!-- Dựng phim -->
-                    <div class="text-center">
-                        <img class="w-24 h-24 mx-auto rounded-full object-cover shadow-xl border-2 border-gray-500 mb-3" src="https://placehold.co/200x200/333/ffffff?text=Dựng+Phim" alt="[Ảnh Dựng phim]">
-                        <p class="text-lg font-bold text-white">Hoàng Anh Dũng</p>
-                        <p class="text-sm text-red-600">Dựng Phim (Editor)</p>
-                        <p class="text-xs text-gray-500 mt-1">Người thổi hồn vào nhịp phim.</p>
+
+                    <!-- Thành viên 5: Biên Kịch -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg group hover:shadow-red-900/40 transition duration-300">
+                        <div class="relative overflow-hidden">
+                            <img class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-500" src="./assets/personal/qthinh.jpeg" alt="Nguyễn Quốc Thịnh">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <p class="text-white font-bold text-xl">Nguyễn Quốc Thịnh</p>
+                                <p class="text-red-500 font-medium text-sm">vai trò</p>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Thành viên 6: Dựng Phim -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg group hover:shadow-red-900/40 transition duration-300">
+                        <div class="relative overflow-hidden">
+                            <img class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-500" src="./assets/personal/nphu.jpeg" alt="Nguyễn Huỳnh Nguyên Phú">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <p class="text-white font-bold text-xl">Nguyễn Huỳnh Nguyên Phú</p>
+                                <p class="text-red-500 font-medium text-sm">vai trò</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -348,7 +368,7 @@
     <!-- Footer -->
     <footer class="bg-black border-t border-gray-800 py-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm">
-            <p class="text-gray-500 text-center md:text-left">&copy; 2024 Phim Ngắn: Sống Lớn Hơn Chính Mình. Mọi quyền được bảo lưu.</p>
+            <p class="text-gray-500 text-center md:text-left">&copy; 2025 Phim Ngắn: BƯỚC RA KHỎI MÀN HÌNH.</p>
             <div class="mt-4 md:mt-0">
                 <a href="mailto:contact@phimngan.vn" class="text-gray-500 hover:text-white transition">Liên hệ: contact@phimngan.vn</a>
             </div>
