@@ -39,16 +39,12 @@
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <!-- LOGO MỚI -->
             <div class="flex items-center space-x-3 group cursor-pointer" onclick="scrollToSection('trang-chu')">
-                <!-- SVG Logo Quả Địa Cầu được thiết kế mới -->
+                <!-- Hình ảnh logo của bạn thay thế cho icon SVG -->
                 <div class="relative">
                     <!-- Hiệu ứng glow phía sau -->
                     <div class="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-900 rounded-full blur opacity-50 group-hover:opacity-100 transition duration-500"></div>
-                    <!-- Icon chính -->
-                    <div class="relative bg-black rounded-full p-1 border border-red-800">
-                        <svg class="w-9 h-9 text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
-                        </svg>
-                    </div>
+                    <!-- Hình ảnh chính -->
+                    <img src="./assets/logo/team_logo.png" alt="BEING BIGGER THAN YOURSELF Logo" class="relative w-10 h-10 rounded-full border-2 border-red-800 object-cover transform group-hover:scale-110 transition duration-300">
                 </div>
                 
                 <div class="text-xl font-extrabold text-white tracking-widest hidden sm:block group-hover:text-red-500 transition duration-300">
@@ -152,7 +148,7 @@
             <!-- Thêm Link Google Drive chứa ảnh -->
                 <div class="mt-16 text-center">
                     <div class="inline-block p-[2px] rounded-full bg-gradient-to-r from-green-400 via-blue-500 to-purple-600">
-                        <a href="https://drive.google.com/drive/folders/1EjsdZ56MPTgJtz_ob0JUN7r1sjnKraPe" target="_blank" class="block px-8 py-4 bg-gray-900 rounded-full hover:bg-gray-800 transition duration-300 group relative overflow-hidden">
+                        <a href="https://drive.google.com/drive/folders/1CLoL96H7wTSvDKxra-1u9r2HgH81PnSF" target="_blank" class="block px-8 py-4 bg-gray-900 rounded-full hover:bg-gray-800 transition duration-300 group relative overflow-hidden">
                             <span class="relative z-10 flex items-center space-x-3">
                                 <!-- Icon Folder/Drive -->
                                 <svg class="w-6 h-6 text-green-400" fill="currentColor" viewBox="0 0 24 24">
@@ -169,6 +165,51 @@
             </div>
         </section>
 
+        <!-- SECTION MỚI: POSTER CHÍNH THỨC -->
+        <section id="poster" class="py-20 bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-white text-center mb-12 border-b-2 border-red-600 pb-2 inline-block mx-auto">POSTER CHÍNH THỨC</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    
+                    <!-- Cột Trái: Ảnh Poster -->
+                    <div class="relative group cursor-pointer rounded-2xl overflow-hidden shadow-2xl border border-gray-800" onclick="openLightbox(this.querySelector('img').src)">
+                        <!-- Bạn hãy thay placeholder bằng đường dẫn ảnh poster thật -->
+                        <img src="./assets/poster.png" alt="Poster Phim" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700 ease-out">
+                        
+                        <!-- Icon phóng to -->
+                        <div class="absolute top-4 right-4 bg-black/50 p-2 rounded-full opacity-0 group-hover:opacity-100 transition duration-300">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                        </div>
+                    </div>
+
+                    <!-- Cột Phải: Mô tả & Ý nghĩa -->
+                    <div class="space-y-6 text-gray-300">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2 text-red-500">"BƯỚC RA KHỎI MÀN HÌNH"</h3>
+                            <p class="text-sm text-gray-500 italic">Một tấm poster chứa đựng linh hồn của bộ phim.</p>
+                        </div>
+                        
+                        <p class="leading-relaxed text-justify">
+                            Poster được thiết kế với tông màu chủ đạo là đỏ và đen, tượng trưng cho sự nhiệt huyết nhưng cũng đầy bí ẩn và thử thách của tuổi trẻ. Hình ảnh các nhân vật chính không nhìn trực diện mà hướng về phía ánh sáng, thể hiện khát khao vươn lên và tìm kiếm giá trị đích thực.
+                        </p>
+                        
+                        <div class="bg-gray-800/50 p-4 rounded-lg border-l-4 border-red-600">
+                            <p class="italic text-gray-400">
+                                "Không chỉ là một bức ảnh, đây là câu chuyện về sự trưởng thành, tình bạn và lòng dũng cảm để vượt qua giới hạn bản thân."
+                            </p>
+                        </div>
+
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><span class="text-red-500 mr-2">✓</span> Thiết kế bởi: Nguyễn Lý Thành Tài</li>
+                            <li class="flex items-center"><span class="text-red-500 mr-2">✓</span> Cảm hứng: Sự kết nối giữa thế giới ảo và thực</li>
+                            <li class="flex items-center"><span class="text-red-500 mr-2">✓</span> Thông điệp: Being Bigger Than Yourself</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
         <!-- 3. Diễn viên và Đội ngũ (Đã cập nhật link tới profile) -->
         <section id="dien-vien-doi-ngu" class="py-20 bg-black">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
