@@ -1,18 +1,32 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="dark"> <!-- Mặc định thêm class 'dark' để giữ giao diện tối ban đầu -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BEING BIGGER THAN YOURSELF - Website Phim</title>
     <!-- Tải Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Thiết lập font Inter và cấu hình Tailwind -->
+    <!-- Cấu hình Tailwind cho Dark Mode -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            bg: '#0d0d0d',
+                            text: '#e5e5e5'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Thiết lập font Inter -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0d0d0d; /* Nền tối cho cảm giác điện ảnh */
-            color: #e5e5e5; /* Màu chữ sáng */
             scroll-behavior: smooth;
         }
         /* Custom scrollbar style */
@@ -32,148 +46,287 @@
         }
     </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-900 dark:bg-[#0d0d0d] dark:text-[#e5e5e5] transition-colors duration-300">
 
     <!-- Thanh Điều Hướng (Navigation Bar) -->
-    <header class="sticky top-0 z-50 bg-black bg-opacity-30 backdrop-blur-sm shadow-xl">
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-black/30 backdrop-blur-md shadow-xl transition-all duration-300">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <!-- LOGO MỚI -->
             <div class="flex items-center space-x-3 group cursor-pointer" onclick="scrollToSection('trang-chu')">
-                <!-- Hình ảnh logo của bạn thay thế cho icon SVG -->
                 <div class="relative">
-                    <!-- Hiệu ứng glow phía sau -->
+                    <!-- Hiệu ứng glow -->
                     <div class="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-900 rounded-full blur opacity-50 group-hover:opacity-100 transition duration-500"></div>
                     <!-- Hình ảnh chính -->
-                    <img src="./assets/logo/team_logo.png" alt="BEING BIGGER THAN YOURSELF Logo" class="relative w-10 h-10 rounded-full border-2 border-red-800 object-cover transform group-hover:scale-110 transition duration-300">
+                    <img src="./assets/logo/team_logo.png" alt="Logo" class="relative w-10 h-10 rounded-full border-2 border-red-800 object-cover transform group-hover:scale-110 transition duration-300">
                 </div>
                 
-                <div class="text-xl font-extrabold text-white tracking-widest hidden sm:block group-hover:text-red-500 transition duration-300">
+                <div class="text-xl font-extrabold text-gray-900 dark:text-white tracking-widest hidden sm:block group-hover:text-red-600 dark:group-hover:text-red-500 transition duration-300">
                     BEING BIGGER THAN YOURSELF
                 </div>
             </div>
-            <!-- END LOGO MỚI -->
-            <div class="space-x-4 hidden md:flex">
-                <a href="#trang-chu" class="text-gray-300 hover:text-white transition duration-200" onclick="scrollToSection('trang-chu')">Trang chủ</a>
-                <a href="#ve-phim" class="text-gray-300 hover:text-white transition duration-200" onclick="scrollToSection('ve-phim')">Về phim</a>
-                <a href="#dien-vien-doi-ngu" class="text-gray-300 hover:text-white transition duration-200" onclick="scrollToSection('dien-vien-doi-ngu')">Thành viên</a>
-                <a href="#hoat-dong" class="text-gray-300 hover:text-white transition duration-200" onclick="scrollToSection('hoat-dong')">Hoạt động</a>
-                <a href="#tin-tuc" class="text-gray-300 hover:text-white transition duration-200" onclick="scrollToSection('tin-tuc')">Tin tức</a>
-                <a href="#cong-cu" class="text-gray-300 hover:text-white transition duration-200" onclick="scrollToSection('cong-cu')">Công cụ</a>
-                <a href="#tai-lieu" class="text-gray-300 hover:text-white transition duration-200" onclick="scrollToSection('tai-lieu')">Tài liệu</a>
+            
+            <div class="flex items-center space-x-4">
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex space-x-4">
+                    <a href="#trang-chu" class="text-gray-600 dark:text-gray-300 hover:text-red-600 dark:hover:text-white transition duration-200" onclick="scrollToSection('trang-chu')">Trang chủ</a>
+                    <a href="#ve-phim" class="text-gray-600 dark:text-gray-300 hover:text-red-600 dark:hover:text-white transition duration-200" onclick="scrollToSection('ve-phim')">Về phim</a>
+                    <a href="#dien-vien-doi-ngu" class="text-gray-600 dark:text-gray-300 hover:text-red-600 dark:hover:text-white transition duration-200" onclick="scrollToSection('dien-vien-doi-ngu')">Thành viên</a>
+                    <a href="#hoat-dong" class="text-gray-600 dark:text-gray-300 hover:text-red-600 dark:hover:text-white transition duration-200" onclick="scrollToSection('hoat-dong')">Hoạt động</a>
+                    <a href="#poster" class="text-gray-600 dark:text-gray-300 hover:text-red-600 dark:hover:text-white transition duration-200" onclick="scrollToSection('poster')">Poster</a>
+                    <a href="#tin-tuc" class="text-gray-600 dark:text-gray-300 hover:text-red-600 dark:hover:text-white transition duration-200" onclick="scrollToSection('tin-tuc')">Tin tức</a>
+                    <a href="#cong-cu" class="text-gray-600 dark:text-gray-300 hover:text-red-600 dark:hover:text-white transition duration-200" onclick="scrollToSection('cong-cu')">Công cụ</a>
+                    <a href="#tai-lieu" class="text-gray-600 dark:text-gray-300 hover:text-red-600 dark:hover:text-white transition duration-200" onclick="scrollToSection('tai-lieu')">Tài liệu</a>
+                </div>
+
+                <!-- Nút Chuyển Đổi Dark/Light Mode -->
+                <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition focus:outline-none">
+                    <!-- Icon Mặt Trời (Hiện khi Dark Mode) -->
+                    <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100 2h1a1 1 0 100-2h-1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
+                    <!-- Icon Mặt Trăng (Hiện khi Light Mode) -->
+                    <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gray-600 dark:text-white" aria-label="Menu" onclick="showNotification('Menu', 'Hãy cuộn xuống để xem nội dung!')">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
             </div>
-            <!-- Mobile Menu Button (simplified for single file) -->
-            <button class="md:hidden text-white" aria-label="Menu">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            </button>
         </nav>
     </header>
 
     <main>
         <!-- 1. Trang Chủ (Hero Section) -->
         <section id="trang-chu" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
-            <!-- Poster phim lớn (Placeholder) -->
-            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./assets/bg.jpg'); opacity: 0.3;"></div>
-            <!-- Lớp phủ gradient để làm nổi bật chữ -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-5"></div>
             
-            <div class="relative z-10 p-6 md:p-12 max-w-4xl">
-                <h1 class="text-6xl md:text-8xl font-black text-white mb-4 tracking-tight leading-tight uppercase">
+            <!-- VIDEO NỀN -->
+            <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+                <source src="./assets/trailer.mp4" type="video/mp4">
+                <img src="./assets/bg.jpg" alt="Background fallback">
+            </video>
+            
+            <!-- Lớp phủ màu đen -->
+            <div class="absolute inset-0 bg-black/60 z-10"></div>
+            
+            <div class="relative z-20 p-6 md:p-12 max-w-4xl">
+                <h1 class="text-6xl md:text-8xl font-black text-white mb-4 tracking-tight leading-tight uppercase drop-shadow-2xl">
                     BƯỚC RA KHỎI MÀN HÌNH
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-300 mb-8">
+                <p class="text-xl md:text-2xl text-gray-200 mb-8 drop-shadow-md font-medium">
                     Phim Ngắn | 25C10 | s2L team
                 </p>
-                <!-- Nút xem phim -->
-                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn-primary">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn-primary backdrop-blur-sm bg-red-600/90 hover:bg-red-700">
                     <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-                    Xem Phim Ngay
+                    Xem Trailer Chính Thức
                 </a>
             </div>
         </section>
 
         <!-- 1b. Giới thiệu ngắn -->
-        <section class="py-16 bg-black">
+        <section class="py-16 bg-white dark:bg-black transition-colors duration-300">
             <div class="max-w-5xl mx-auto px-4 text-center">
                 <h2 class="text-3xl font-bold text-red-600 mb-4">KHÁM PHÁ HÀNH TRÌNH</h2>
-                <p class="text-lg text-gray-400 mb-6">
-                    Bộ phim là hành trình khám phá bản thân đầy cảm xúc của nhóm bạn trẻ, đối diện với những áp lực và kỳ vọng để tìm ra ý nghĩa thực sự của việc "Sống Lớn Hơn Chính Mình".
+                <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">
+                    yap
                 </p>
-                <p class="text-lg text-gray-400">
-                    Phim không chỉ là một câu chuyện mà còn là một lời mời gọi bạn nhìn lại những định kiến và giới hạn cá nhân. Nó đặt ra câu hỏi: Liệu bạn đã thực sự sống với tất cả tiềm năng của mình chưa?
+                <p class="text-lg text-gray-600 dark:text-gray-400">
+                    yap
                 </p>
             </div>
         </section>
         
         <!-- 2. Về Phim -->
-        <section id="ve-phim" class="py-20 bg-gray-900">
+        <section id="ve-phim" class="py-20 bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-bold text-white text-center mb-12 border-b-2 border-red-600 pb-2 inline-block mx-auto">VỀ PHIM</h2>
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white text-center mb-12 border-b-2 border-red-600 pb-2 inline-block mx-auto">VỀ PHIM</h2>
 
                 <!-- Tóm tắt & Thông điệp -->
                 <div class="grid md:grid-cols-2 gap-12 mb-16">
                     <div>
-                        <h3 class="text-2xl font-semibold text-red-500 mb-4">Tóm Tắt Cốt Truyện (Gợi Mở)</h3>
-                        <p class="text-gray-400 leading-relaxed" id="synopsis-text">
-                            Câu chuyện xoay quanh An, một sinh viên kiến trúc luôn cảm thấy mình nhỏ bé giữa thành phố lớn và gánh nặng của gia đình. Khi một dự án cộng đồng quan trọng đứng trước nguy cơ bị hủy bỏ, An và những người bạn phải hợp lực, không chỉ để cứu lấy dự án mơ ước mà còn để vượt qua giới hạn của chính họ, khám phá sức mạnh tập thể và giá trị của sự đồng cảm. Đây là một cuộc chiến không khoan nhượng giữa lý tưởng tuổi trẻ và thực tế khắc nghiệt.
+                        <h3 class="text-2xl font-semibold text-red-600 dark:text-red-500 mb-4">Tóm Tắt Cốt Truyện</h3>
+                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                            yap
                         </p>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-semibold text-red-500 mb-4">Thông Điệp: "Being Bigger Than Yourself"</h3>
-                        <p class="text-gray-400 leading-relaxed" id="theme-text">
-                            "Sống Lớn Hơn Chính Mình" không có nghĩa là trở nên vĩ đại hay nổi tiếng. Thông điệp cốt lõi là khả năng kết nối, thấu hiểu và tạo ra giá trị tích cực cho cộng đồng xung quanh. Bộ phim khẳng định rằng, mỗi hành động nhỏ, mỗi sự quan tâm chân thành đều có thể tạo nên sự khác biệt lớn, giúp chúng ta nhìn thấy bức tranh rộng hơn ngoài những lợi ích cá nhân.
+                        <h3 class="text-2xl font-semibold text-red-600 dark:text-red-500 mb-4">Thông Điệp</h3>
+                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                            yap
                         </p>
                     </div>
                 </div>
                 
                 <!-- Quá trình thực hiện -->
-                <div class="bg-gray-800 p-8 rounded-xl shadow-2xl mb-16">
-                    <h3 class="text-3xl font-bold text-white mb-6 text-center">🎬 Quá Trình Thực Hiện</h3>
-                    <div class="text-gray-400 space-y-4">
-                        <p><strong>Khó khăn & Thử thách:</strong> Quá trình thực hiện bộ phim không hề dễ dàng. Chúng tôi phải đối phó với thời tiết thất thường, từ cái nắng gắt ban trưa đến những cơn mưa bất chợt, cùng với áp lực về thời gian và ngân sách. Có những cảnh quay phải quay đi quay lại hàng chục lần để đạt được độ hoàn hảo về cảm xúc.</p>
-                        <p><strong>Kỷ niệm vui:</strong> Tuy nhiên, chính những khó khăn đó lại tạo ra những kỷ niệm đáng nhớ. Cả đoàn đã cùng nhau thức trắng đêm để hoàn thành cảnh cao trào quan trọng, cùng chia sẻ những bữa ăn vội vã nhưng đầy ắp tiếng cười và sự động viên. Sự gắn kết giữa các thành viên đã biến chúng tôi thành một gia đình thực sự.</p>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg dark:shadow-2xl mb-16 transition-colors duration-300">
+                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">🎬 Quá Trình Thực Hiện</h3>
+                    <div class="text-gray-600 dark:text-gray-400 space-y-4">
+                        <p><strong>Khó khăn & Thử thách:</strong> 
+                            yap
+                        </p>
+                        <p><strong>Kỷ niệm vui:</strong> 
+                            yaps
+                        </p>
                     </div>
                 </div>
 
                 <!-- Gallery ảnh Hậu trường -->
                 <div>
-                    <h3 class="text-3xl font-bold text-white mb-8 text-center">📸 Gallery Ảnh Hậu Trường (Behind The Scenes)</h3>
+                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">📸 Gallery Ảnh Hậu Trường</h3>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <img class="w-full h-40 object-cover rounded-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer" src="./assets/highlight/IMG_9318.png" alt="[Ảnh hậu trường 1]">
-                        <img class="w-full h-40 object-cover rounded-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer" src="./assets/highlight/IMG_9376.png" alt="[Ảnh hậu trường 2]">
-                        <img class="w-full h-40 object-cover rounded-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer" src="https://placehold.co/400x300/3d3d3d/ffffff?text=Cảnh+Đẹp+1" alt="[Ảnh cảnh quay đẹp 1]">
-                        <img class="w-full h-40 object-cover rounded-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer" src="https://placehold.co/400x300/3d3d3d/ffffff?text=Cảnh+Đẹp+2" alt="[Ảnh cảnh quay đẹp 2]">
+                        <img class="w-full h-40 object-cover rounded-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer" src="./assets/highlight/IMG_9318.png" alt="[Ảnh hậu trường 1]" onclick="openLightbox(this.src)">
+                        <img class="w-full h-40 object-cover rounded-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer" src="./assets/highlight/IMG_9376.png" alt="[Ảnh hậu trường 2]" onclick="openLightbox(this.src)">
+                        <img class="w-full h-40 object-cover rounded-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer" src="https://placehold.co/400x300/3d3d3d/ffffff?text=Cảnh+Đẹp+1" alt="[Ảnh cảnh quay đẹp 1]" onclick="openLightbox(this.src)">
+                        <img class="w-full h-40 object-cover rounded-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer" src="https://placehold.co/400x300/3d3d3d/ffffff?text=Cảnh+Đẹp+2" alt="[Ảnh cảnh quay đẹp 2]" onclick="openLightbox(this.src)">
                     </div>
                 </div>
             </div>
-            <!-- Thêm Link Google Drive chứa ảnh -->
-                <div class="mt-16 text-center">
-                    <div class="inline-block p-[2px] rounded-full bg-gradient-to-r from-green-400 via-blue-500 to-purple-600">
-                        <a href="https://drive.google.com/drive/folders/1CLoL96H7wTSvDKxra-1u9r2HgH81PnSF" target="_blank" class="block px-8 py-4 bg-gray-900 rounded-full hover:bg-gray-800 transition duration-300 group relative overflow-hidden">
-                            <span class="relative z-10 flex items-center space-x-3">
-                                <!-- Icon Folder/Drive -->
-                                <svg class="w-6 h-6 text-green-400" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"/>
-                                </svg>
-                                <span class="text-white font-bold text-lg group-hover:text-green-300 transition tracking-wide">TẢI KHO ẢNH & TÀI NGUYÊN TRÊN DRIVE</span>
-                                <svg class="w-5 h-5 text-gray-400 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                            </span>
-                        </a>
+        </section>
+
+        <!-- 3. Thành Viên Dự Án -->
+        <section id="dien-vien-doi-ngu" class="py-20 bg-white dark:bg-black transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white text-center mb-12 border-b-2 border-red-600 pb-2 inline-block mx-auto">THÀNH VIÊN DỰ ÁN</h2>
+
+                <!-- Ảnh tập thể Đoàn Phim -->
+                <div class="mb-12 rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800 relative group cursor-pointer max-w-4xl mx-auto" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="./assets/bg.jpg" alt="Tập thể đoàn phim" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <p class="text-white font-bold text-lg">Đoàn làm phim 25C10 - s2L Team</p>
                     </div>
-                    <p class="text-gray-500 text-sm mt-4">Link Google Drive chứa toàn bộ ảnh hậu trường chất lượng cao và poster gốc.</p>
                 </div>
 
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <!-- Thành viên 1 -->
+                    <a href="./profile/ttai.html" class="block bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg group hover:shadow-red-900/40 transition duration-300 border border-gray-100 dark:border-gray-800">
+                        <div class="relative overflow-hidden">
+                            <img class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-500" src="./assets/personal/ttai.JPG" alt="Nguyễn Lý Thành Tài">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <p class="text-white font-bold text-xl">Nguyễn Lý Thành Tài</p>
+                                <p class="text-red-500 font-medium text-sm">Nhóm trưởng</p>
+                                <p class="text-gray-300 dark:text-gray-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition">Bấm để xem hồ sơ »</p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Thành viên 2 -->
+                    <a href="./profile/qhung.html" class="block bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg group hover:shadow-red-900/40 transition duration-300 border border-gray-100 dark:border-gray-800">
+                        <div class="relative overflow-hidden">
+                            <img class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-500" src="./assets/personal/qhung.jpeg" alt="Vương Quốc Hưng">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <p class="text-white font-bold text-xl">Vương Quốc Hưng</p>
+                                <p class="text-red-500 font-medium text-sm">Thành viên</p>
+                                <p class="text-gray-300 dark:text-gray-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition">Bấm để xem hồ sơ »</p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Thành viên 3 -->
+                    <a href="./profile/yngoc.html" class="block bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg group hover:shadow-red-900/40 transition duration-300 border border-gray-100 dark:border-gray-800">
+                        <div class="relative overflow-hidden">
+                            <img class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-500" src="./assets/personal/yngoc.JPG" alt="Lâm Yến Ngọc">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <p class="text-white font-bold text-xl">Lâm Yến Ngọc</p>
+                                <p class="text-red-500 font-medium text-sm">Thành viên</p>
+                                <p class="text-gray-300 dark:text-gray-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition">Bấm để xem hồ sơ »</p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Thành viên 4 -->
+                    <a href="./profile/akhoa.html" class="block bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg group hover:shadow-red-900/40 transition duration-300 border border-gray-100 dark:border-gray-800">
+                        <div class="relative overflow-hidden">
+                            <img class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-500" src="./assets/personal/akhoa.jpeg" alt="Trần Nguyễn Anh Khoa">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <p class="text-white font-bold text-xl">Trần Nguyễn Anh Khoa</p>
+                                <p class="text-red-500 font-medium text-sm">Thành viên</p>
+                                <p class="text-gray-300 dark:text-gray-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition">Bấm để xem hồ sơ »</p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Thành viên 5 -->
+                    <a href="./profile/qthinh.html" class="block bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg group hover:shadow-red-900/40 transition duration-300 border border-gray-100 dark:border-gray-800">
+                        <div class="relative overflow-hidden">
+                            <img class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-500" src="./assets/personal/qthinh.jpeg" alt="Nguyễn Quốc Thịnh">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <p class="text-white font-bold text-xl">Nguyễn Quốc Thịnh</p>
+                                <p class="text-red-500 font-medium text-sm">Thành Viên</p>
+                                <p class="text-gray-300 dark:text-gray-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition">Bấm để xem hồ sơ »</p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Thành viên 6 -->
+                    <a href="./profile/nphu.html" class="block bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg group hover:shadow-red-900/40 transition duration-300 border border-gray-100 dark:border-gray-800">
+                        <div class="relative overflow-hidden">
+                            <img class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-500" src="./assets/personal/nphu.jpeg" alt="Nguyễn Huỳnh Nguyên Phú">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <p class="text-white font-bold text-xl">Nguyễn Huỳnh Nguyên Phú</p>
+                                <p class="text-red-500 font-medium text-sm">Thành viên</p>
+                                <p class="text-gray-300 dark:text-gray-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition">Bấm để xem hồ sơ »</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3.5. Hoạt Động Bên Lề -->
+        <section id="hoat-dong" class="py-20 bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white text-center mb-12 border-b-2 border-red-600 pb-2 inline-block mx-auto">HOẠT ĐỘNG BÊN LỀ</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Hoạt động 1 -->
+                    <div onclick="showActivityModal('Xây Cầu', './assets/other_activities/bridge.mp4', 'Hoạt động Xây Cầu là thử thách kết hợp giữa kiến thức vật lý và tinh thần đồng đội. Các đội sử dụng vật liệu giới hạn để xây dựng cây cầu chịu lực tốt nhất.')" class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-xl hover:shadow-red-900/50 transition duration-300 text-center cursor-pointer group">
+                        <div class="w-16 h-16 bg-red-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-red-600/40 transition">
+                            <svg class="w-8 h-8 text-red-600 dark:text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-red-500 transition">Xây Cầu</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Thử thách kỹ thuật và sự khéo léo.</p>
+                        
+                        <div class="rounded-lg w-full h-48 overflow-hidden bg-black">
+                            <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                                <source src="./assets/other_activities/bridge.mp4" type="video/mp4">
+                                <img src="https://placehold.co/400x300/222/fff?text=Xay+Cau" alt="Xây Cầu" class="w-full h-full object-cover">
+                            </video>
+                        </div>
+                        
+                        <p class="text-red-600 dark:text-red-500 text-xs mt-3 font-medium opacity-0 group-hover:opacity-100 transition">Bấm để xem chi tiết</p>
+                    </div>
+
+                    <!-- Hoạt động 2 -->
+                    <div onclick="showActivityModal('Egg Dropper', './assets/other_activities/eggdropper.jpg', 'Thử thách Egg Dropper yêu cầu các đội thiết kế thiết bị bảo vệ trứng rơi từ độ cao 5m.')" class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-xl hover:shadow-red-900/50 transition duration-300 text-center cursor-pointer group">
+                        <div class="w-16 h-16 bg-red-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-red-600/40 transition">
+                            <svg class="w-8 h-8 text-red-600 dark:text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-red-500 transition">Egg Dropper</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Sáng tạo thiết bị bảo vệ trứng.</p>
+                        <img src="./assets/other_activities/eggdropper.jpg" alt="Hoạt động Egg Dropper" class="rounded-lg w-full h-48 object-cover">
+                        <p class="text-red-600 dark:text-red-500 text-xs mt-3 font-medium opacity-0 group-hover:opacity-100 transition">Bấm để xem chi tiết</p>
+                    </div>
+                    <!-- Hoạt động 3 -->
+                    <div onclick="showActivityModal('Sinh Tồn Ngoài Biển', './assets/other_activities/sinhton.png', 'Trải nghiệm kỹ năng sinh tồn, làm việc nhóm trong môi trường giả định trên biển.')" class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-xl hover:shadow-red-900/50 transition duration-300 text-center cursor-pointer group">
+                        <div class="w-16 h-16 bg-red-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-red-600/40 transition">
+                            <svg class="w-8 h-8 text-red-600 dark:text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-red-500 transition">Sinh Tồn Ngoài Biển</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Trải nghiệm kỹ năng sinh tồn.</p>
+                        <img src="./assets/other_activities/sinhton.png" alt="Hoạt động sinh tồn" class="rounded-lg w-full h-48 object-cover">
+                        <p class="text-red-600 dark:text-red-500 text-xs mt-3 font-medium opacity-0 group-hover:opacity-100 transition">Bấm để xem chi tiết</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- SECTION MỚI: POSTER CHÍNH THỨC -->
-        <section id="poster" class="py-20 bg-gray-900">
+        <section id="poster" class="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-bold text-white text-center mb-12 border-b-2 border-red-600 pb-2 inline-block mx-auto">POSTER CHÍNH THỨC</h2>
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white text-center mb-12 border-b-2 border-red-600 pb-2 inline-block mx-auto">POSTER CHÍNH THỨC</h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     
                     <!-- Cột Trái: Ảnh Poster -->
-                    <div class="relative group cursor-pointer rounded-2xl overflow-hidden shadow-2xl border border-gray-800" onclick="openLightbox(this.querySelector('img').src)">
+                    <div class="relative group cursor-pointer rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800" onclick="openLightbox(this.querySelector('img').src)">
                         <!-- Bạn hãy thay placeholder bằng đường dẫn ảnh poster thật -->
                         <img src="./assets/poster.png" alt="Poster Phim" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700 ease-out">
                         
@@ -184,9 +337,9 @@
                     </div>
 
                     <!-- Cột Phải: Mô tả & Ý nghĩa -->
-                    <div class="space-y-6 text-gray-300">
+                    <div class="space-y-6 text-gray-600 dark:text-gray-300">
                         <div>
-                            <h3 class="text-2xl font-bold text-white mb-2 text-red-500">"BƯỚC RA KHỎI MÀN HÌNH"</h3>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2 text-red-600 dark:text-red-500">"BƯỚC RA KHỎI MÀN HÌNH"</h3>
                             <p class="text-sm text-gray-500 italic">Một tấm poster chứa đựng linh hồn của bộ phim.</p>
                         </div>
                         
@@ -194,232 +347,86 @@
                             Poster được thiết kế với tông màu chủ đạo là đỏ và đen, tượng trưng cho sự nhiệt huyết nhưng cũng đầy bí ẩn và thử thách của tuổi trẻ. Hình ảnh các nhân vật chính không nhìn trực diện mà hướng về phía ánh sáng, thể hiện khát khao vươn lên và tìm kiếm giá trị đích thực.
                         </p>
                         
-                        <div class="bg-gray-800/50 p-4 rounded-lg border-l-4 border-red-600">
-                            <p class="italic text-gray-400">
+                        <div class="bg-gray-100 dark:bg-gray-800/50 p-4 rounded-lg border-l-4 border-red-600">
+                            <p class="italic text-gray-600 dark:text-gray-400">
                                 "Không chỉ là một bức ảnh, đây là câu chuyện về sự trưởng thành, tình bạn và lòng dũng cảm để vượt qua giới hạn bản thân."
                             </p>
                         </div>
 
                         <ul class="space-y-2">
-                            <li class="flex items-center"><span class="text-red-500 mr-2">✓</span> Thiết kế bởi: Nguyễn Lý Thành Tài</li>
-                            <li class="flex items-center"><span class="text-red-500 mr-2">✓</span> Cảm hứng: Sự kết nối giữa thế giới ảo và thực</li>
-                            <li class="flex items-center"><span class="text-red-500 mr-2">✓</span> Thông điệp: Being Bigger Than Yourself</li>
+                            <li class="flex items-center"><span class="text-red-600 dark:text-red-500 mr-2">✓</span> Thiết kế bởi: Team Design 25C10</li>
+                            <li class="flex items-center"><span class="text-red-600 dark:text-red-500 mr-2">✓</span> Cảm hứng: Sự kết nối giữa thế giới ảo và thực</li>
+                            <li class="flex items-center"><span class="text-red-600 dark:text-red-500 mr-2">✓</span> Thông điệp: Being Bigger Than Yourself</li>
                         </ul>
                     </div>
 
                 </div>
             </div>
         </section>
-        <!-- 3. Diễn viên và Đội ngũ (Đã cập nhật link tới profile) -->
-        <section id="dien-vien-doi-ngu" class="py-20 bg-black">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-bold text-white text-center mb-12 border-b-2 border-red-600 pb-2 inline-block mx-auto">THÀNH VIÊN DỰ ÁN</h2>
-
-                <!-- Grid 3 cột (3 người/dòng), khoảng cách rộng thoáng -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                    
-                    <!-- Thành viên 1: Đạo Diễn -->
-                    <a href="./profile/ttai.html" class="block bg-gray-900 rounded-xl overflow-hidden shadow-lg group hover:shadow-red-900/40 transition duration-300">
-                        <div class="relative overflow-hidden">
-                            <img class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-500" src="./assets/personal/ttai.JPG" alt="Nguyễn Lý Thành Tài">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-                            <div class="absolute bottom-4 left-4">
-                                <p class="text-white font-bold text-xl">Nguyễn Lý Thành Tài</p>
-                                <p class="text-red-500 font-medium text-sm">Trưởng nhóm, editor</p>
-                                <p class="text-gray-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition">Bấm để xem hồ sơ »</p>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Thành viên 2: Nam Chính -->
-                    <a href="./profile/qhung.html" class="block bg-gray-900 rounded-xl overflow-hidden shadow-lg group hover:shadow-red-900/40 transition duration-300">
-                        <div class="relative overflow-hidden">
-                            <img class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-500" src="./assets/personal/qhung.jpeg" alt="Vương Quốc Hưng">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-                            <div class="absolute bottom-4 left-4">
-                                <p class="text-white font-bold text-xl">Vương Quốc Hưng</p>
-                                <p class="text-red-500 font-medium text-sm">Diễn Viên Chính (Vai ...)</p>
-                                <p class="text-gray-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition">Bấm để xem hồ sơ »</p>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Thành viên 3: Nữ Chính -->
-                    <a href="./profile/yngoc.html" class="block bg-gray-900 rounded-xl overflow-hidden shadow-lg group hover:shadow-red-900/40 transition duration-300">
-                        <div class="relative overflow-hidden">
-                            <img class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-500" src="./assets/personal/yngoc.JPG" alt="Lâm Yến Ngọc">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-                            <div class="absolute bottom-4 left-4">
-                                <p class="text-white font-bold text-xl">Lâm Yến Ngọc</p>
-                                <p class="text-red-500 font-medium text-sm">vai trò</p>
-                                <p class="text-gray-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition">Bấm để xem hồ sơ »</p>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Thành viên 4: Quay Phim -->
-                    <a href="./profile/akhoa.html" class="block bg-gray-900 rounded-xl overflow-hidden shadow-lg group hover:shadow-red-900/40 transition duration-300">
-                        <div class="relative overflow-hidden">
-                            <img class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-500" src="./assets/personal/akhoa.jpeg" alt="Trần Nguyễn Anh Khoa">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-                            <div class="absolute bottom-4 left-4">
-                                <p class="text-white font-bold text-xl">Trần Nguyễn Anh Khoa</p>
-                                <p class="text-red-500 font-medium text-sm">vai trò</p>
-                                <p class="text-gray-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition">Bấm để xem hồ sơ »</p>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Thành viên 5: Biên Kịch -->
-                    <a href="./profile/qthinh.html" class="block bg-gray-900 rounded-xl overflow-hidden shadow-lg group hover:shadow-red-900/40 transition duration-300">
-                        <div class="relative overflow-hidden">
-                            <img class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-500" src="./assets/personal/qthinh.jpeg" alt="Nguyễn Quốc Thịnh">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-                            <div class="absolute bottom-4 left-4">
-                                <p class="text-white font-bold text-xl">Nguyễn Quốc Thịnh</p>
-                                <p class="text-red-500 font-medium text-sm">vai trò</p>
-                                <p class="text-gray-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition">Bấm để xem hồ sơ »</p>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Thành viên 6: Dựng Phim -->
-                    <a href="./profile/nphu.html" class="block bg-gray-900 rounded-xl overflow-hidden shadow-lg group hover:shadow-red-900/40 transition duration-300">
-                        <div class="relative overflow-hidden">
-                            <img class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-500" src="./assets/personal/nphu.jpeg" alt="Nguyễn Huỳnh Nguyên Phú">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-                            <div class="absolute bottom-4 left-4">
-                                <p class="text-white font-bold text-xl">Nguyễn Huỳnh Nguyên Phú</p>
-                                <p class="text-red-500 font-medium text-sm">vai trò</p>
-                                <p class="text-gray-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition">Bấm để xem hồ sơ »</p>
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- 3.5. Hoạt Động Bên Lề (Đã cập nhật để bấm vào được) -->
-        <section id="hoat-dong" class="py-20 bg-gray-900">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-bold text-white text-center mb-12 border-b-2 border-red-600 pb-2 inline-block mx-auto">HOẠT ĐỘNG BÊN LỀ</h2>
-                <div class="grid md:grid-cols-3 gap-8">
-                    
-                    <!-- Hoạt động 1: Xây Cầu (VÍ DỤ DÙNG GIF) -->
-                    <!-- Lưu ý: Bạn cần thay './assets/xay-cau.gif' bằng đường dẫn file GIF thật của bạn -->
-                    <div onclick="showActivityModal('Xây Cầu', './assets/other_activities/bridge.gif', 'Hoạt động Xây Cầu là thử thách kết hợp giữa kiến thức vật lý và tinh thần đồng đội. Các đội sử dụng vật liệu giới hạn (que kem, ống hút) để xây dựng cây cầu chịu lực tốt nhất. Qua đó rèn luyện tư duy kết cấu, phân chia công việc và giải quyết vấn đề.')" class="bg-gray-800 rounded-xl p-6 shadow-xl hover:shadow-red-900/50 transition duration-300 text-center cursor-pointer group">
-                        <div class="w-16 h-16 bg-red-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-red-600/40 transition">
-                            <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-red-400 transition">Xây Cầu</h3>
-                        <p class="text-gray-400 text-sm mb-4">Thử thách kỹ thuật và sự khéo léo trong việc xây dựng mô hình cầu chịu lực.</p>
-                        <!-- Ảnh GIF được chèn ở đây -->
-                        <img src="./assets/other_activities/bridge.gif" alt="Hoạt động xây cầu" class="rounded-lg w-full h-48 object-cover">
-                        <p class="text-red-500 text-xs mt-3 font-medium opacity-0 group-hover:opacity-100 transition">Bấm để xem chi tiết</p>
-                    </div>
-
-                    <!-- Hoạt động 2: Egg Dropper -->
-                    <div onclick="showActivityModal('Egg Dropper', './assets/other_activities/eggdropper.jpg', 'Thử thách Egg Dropper yêu cầu các đội thiết kế thiết bị bảo vệ trứng rơi từ độ cao 5m. Bài học về sáng tạo không giới hạn, tính toán lực cản và gia tốc để đảm bảo an toàn cho quả trứng mong manh.')" class="bg-gray-800 rounded-xl p-6 shadow-xl hover:shadow-red-900/50 transition duration-300 text-center cursor-pointer group">
-                        <div class="w-16 h-16 bg-red-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-red-600/40 transition">
-                            <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-red-400 transition">Egg Dropper</h3>
-                        <p class="text-gray-400 text-sm mb-4">Sáng tạo thiết bị bảo vệ trứng rơi từ trên cao, rèn luyện tư duy vật lý.</p>
-                        <img src="./assets/other_activities/eggdropper.jpg" alt="Hoạt động Egg Dropper" class="rounded-lg w-full h-48 object-cover">
-                        <p class="text-red-500 text-xs mt-3 font-medium opacity-0 group-hover:opacity-100 transition">Bấm để xem chi tiết</p>
-                    </div>
-
-                    <!-- Hoạt động 3: Sinh Tồn -->
-                    <div onclick="showActivityModal('Sinh Tồn Ngoài Biển', './assets/other_activities/sinhton.png', 'Trong tình huống giả định lạc trên biển, các đội phải ra quyết định sinh tử về phân chia lương thực, nước uống và phát tín hiệu cầu cứu. Hoạt động đề cao kỹ năng lãnh đạo, làm việc nhóm và thấu hiểu đồng đội.')" class="bg-gray-800 rounded-xl p-6 shadow-xl hover:shadow-red-900/50 transition duration-300 text-center cursor-pointer group">
-                        <div class="w-16 h-16 bg-red-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-red-600/40 transition">
-                            <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-red-400 transition">Sinh Tồn Ngoài Biển</h3>
-                        <p class="text-gray-400 text-sm mb-4">Trải nghiệm kỹ năng sinh tồn, làm việc nhóm trong môi trường giả định trên biển.</p>
-                        <img src="./assets/other_activities/sinhton.png" alt="Hoạt động sinh tồn" class="rounded-lg w-full h-48 object-cover">
-                        <p class="text-red-500 text-xs mt-3 font-medium opacity-0 group-hover:opacity-100 transition">Bấm để xem chi tiết</p>
-                    </div>
-                </div>
-            </div>
-        </section>
         
         <!-- 4. Xem Phim (Link YouTube) -->
-        <section id="xem-phim" class="py-20 bg-gray-900 text-center">
+        <section id="xem-phim" class="py-20 bg-gray-100 dark:bg-gray-900 transition-colors duration-300 text-center">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-bold text-white mb-8 border-b-2 border-red-600 pb-2 inline-block mx-auto">XEM PHIM</h2>
-                <p class="text-xl text-gray-400 mb-8">
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-8 border-b-2 border-red-600 pb-2 inline-block mx-auto">XEM PHIM</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">
                     Khám phá toàn bộ bộ phim ngắn "Sống Lớn Hơn Chính Mình" ngay trên kênh YouTube chính thức của nhóm!
                 </p>
-                <!-- Iframe nhúng YouTube (Placeholder) -->
                 <div class="relative pt-[56.25%] mb-8 rounded-xl overflow-hidden shadow-2xl">
                     <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <a href="https://www.youtube.com/user/yourchannel" target="_blank" class="btn-primary bg-red-800 hover:bg-red-900">
+                <a href="https://www.youtube.com/channel/UCJTKDJ0AUfABzwVrk_5-fPg" target="_blank" class="btn-primary bg-red-600 hover:bg-red-700">
                     <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.46 0-4.336 1.135-4.385 4.336-.049 3.201-.049 6.843 0 10.044.049 3.201.875 4.336 4.385 4.336 3.599.246 11.626.246 15.23 0 3.46 0 4.336-1.135 4.385-4.336.049-3.201.049-6.843 0-10.044-.049-3.201-.875-4.336-4.385-4.336zM9.545 15.939V8.061L15.428 12l-5.883 3.939z"/></svg>
                     Tới Kênh YouTube
                 </a>
             </div>
         </section>
 
-        <!-- 5. Tin Tức/Bài Viết (KHÔNG CÒN AI) -->
-        <section id="tin-tuc" class="py-20 bg-black">
+        <!-- 5. Tin Tức/Bài Viết -->
+        <section id="tin-tuc" class="py-20 bg-white dark:bg-black transition-colors duration-300">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-bold text-white text-center mb-12 border-b-2 border-red-600 pb-2 inline-block mx-auto">TIN TỨC & CẢM NGHĨ</h2>
-
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white text-center mb-12 border-b-2 border-red-600 pb-2 inline-block mx-auto">TIN TỨC & CẢM NGHĨ</h2>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Bài viết 1: Cảm nghĩ -->
-                    <div class="bg-gray-800 rounded-xl p-6 shadow-xl hover:shadow-red-900/50 transition duration-300">
-                        <h3 class="text-xl font-bold text-red-500 mb-2">Cảm nghĩ sau khi đóng máy: Lửa nhiệt không tắt</h3>
-                        <p class="text-sm text-gray-400 mb-3">Ngày đăng: 13/12/2025</p>
-                        <p class="text-gray-500 text-sm line-clamp-4">
-                            Hơn cả một dự án, "Sống Lớn Hơn Chính Mình" là một hành trình tự hoàn thiện của từng thành viên. Bài viết chia sẻ những cảm xúc chân thật nhất của đạo diễn về sự cống hiến, những giọt nước mắt, và tinh thần đồng đội không thể nào quên...
+                    <!-- Bài viết 1 -->
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-red-600/30 dark:hover:shadow-red-900/50 transition duration-300">
+                        <h3 class="text-xl font-bold text-red-600 dark:text-red-500 mb-2">Tiêu đề bài viết</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Ngày đăng: --/--/----</p>
+                        <p class="text-gray-600 dark:text-gray-500 text-sm line-clamp-4">
+                            Nội dung đang cập nhật...
                         </p>
-                        <!-- Cập nhật: Gọi hàm showPlaceholderPage -->
-                        <button onclick="showPlaceholderPage('Cảm nghĩ sau khi đóng máy: Lửa nhiệt không tắt')" class="text-red-500 hover:text-red-400 text-sm mt-3 inline-block font-medium">Đọc thêm »</button>
+                        <button onclick="showPlaceholderPage('Tiêu đề bài viết')" class="text-red-600 dark:text-red-500 hover:text-red-500 dark:hover:text-red-400 text-sm mt-3 inline-block font-medium">Đọc thêm »</button>
                     </div>
-                    <!-- Bài viết 2: Bài học -->
-                    <div class="bg-gray-800 rounded-xl p-6 shadow-xl hover:shadow-red-900/50 transition duration-300">
-                        <h3 class="text-xl font-bold text-red-500 mb-2">5 Bài học đắt giá từ quá trình làm phim độc lập</h3>
-                        <p class="text-sm text-gray-400 mb-3">Ngày đăng: 01/11/2024</p>
-                        <p class="text-gray-500 text-sm line-clamp-4">
-                            Từ quản lý khủng hoảng bối cảnh cho đến tối ưu hóa ánh sáng với ngân sách eo hẹp, chúng tôi đã rút ra được 5 bài học quan trọng nhất cho bất kỳ nhà làm phim độc lập nào. Đây là những kinh nghiệm xương máu mà chúng tôi muốn chia sẻ...
+                    <!-- Bài viết 2 -->
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-red-600/30 dark:hover:shadow-red-900/50 transition duration-300">
+                        <h3 class="text-xl font-bold text-red-600 dark:text-red-500 mb-2">Tiêu đề bài viết</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Ngày đăng: --/--/----</p>
+                        <p class="text-gray-600 dark:text-gray-500 text-sm line-clamp-4">
+                            Nội dung đang cập nhật...
                         </p>
-                         <!-- Cập nhật: Gọi hàm showPlaceholderPage -->
-                        <button onclick="showPlaceholderPage('5 Bài học đắt giá từ quá trình làm phim độc lập')" class="text-red-500 hover:text-red-400 text-sm mt-3 inline-block font-medium">Đọc thêm »</button>
+                        <button onclick="showPlaceholderPage('Tiêu đề bài viết')" class="text-red-600 dark:text-red-500 hover:text-red-500 dark:hover:text-red-400 text-sm mt-3 inline-block font-medium">Đọc thêm »</button>
                     </div>
-                    <!-- Bài viết 3: Phỏng vấn -->
-                    <div class="bg-gray-800 rounded-xl p-6 shadow-xl hover:shadow-red-900/50 transition duration-300">
-                        <h3 class="text-xl font-bold text-red-500 mb-2">Phỏng vấn nhanh diễn viên chính: An và vai diễn đột phá</h3>
-                        <p class="text-sm text-gray-400 mb-3">Ngày đăng: 10/11/2024</p>
-                        <p class="text-gray-500 text-sm line-clamp-4">
-                            Diễn viên Trần Văn An chia sẻ về cách anh ấy hóa thân vào nhân vật, những khó khăn khi thể hiện chiều sâu tâm lý và khoảnh khắc An cảm thấy mình thực sự "Sống Lớn Hơn Chính Mình" trong quá trình quay phim...
+                    <!-- Bài viết 3 -->
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-red-600/30 dark:hover:shadow-red-900/50 transition duration-300">
+                        <h3 class="text-xl font-bold text-red-600 dark:text-red-500 mb-2">Tiêu đề bài viết</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Ngày đăng: --/--/----</p>
+                        <p class="text-gray-600 dark:text-gray-500 text-sm line-clamp-4">
+                            Nội dung đang cập nhật...
                         </p>
-                        <!-- Cập nhật: Gọi hàm showPlaceholderPage -->
-                        <button onclick="showPlaceholderPage('Phỏng vấn nhanh diễn viên chính: An và vai diễn đột phá')" class="text-red-500 hover:text-red-400 text-sm mt-3 inline-block font-medium">Đọc thêm »</button>
+                        <button onclick="showPlaceholderPage('Tiêu đề bài viết')" class="text-red-600 dark:text-red-500 hover:text-red-500 dark:hover:text-red-400 text-sm mt-3 inline-block font-medium">Đọc thêm »</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 6. Công Cụ & Công Nghệ (Thay thế cho Liên Hệ) -->
-        <section id="cong-cu" class="py-20 bg-gray-900">
+        <!-- 6. Công Cụ & Công Nghệ -->
+        <section id="cong-cu" class="py-20 bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-bold text-white text-center mb-12 border-b-2 border-red-600 pb-2 inline-block mx-auto">CÔNG CỤ & CÔNG NGHỆ</h2>
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white text-center mb-12 border-b-2 border-red-600 pb-2 inline-block mx-auto">CÔNG CỤ & CÔNG NGHỆ</h2>
 
                 <div class="grid md:grid-cols-3 gap-8 text-center">
-                    
-                    <!-- Capcut -->
-                    <a href = "#" class="bg-gray-800 p-8 rounded-xl shadow-2xl hover:bg-gray-700 transition duration-300 group">
-                        <div class="w-20 h-20 mx-auto mb-6 bg-gray-900 rounded-2xl flex items-center justify-center group-hover:scale-110 transition duration-300 border border-gray-600">
-                            <!-- SVG CapCut Icon (Biểu tượng cái kéo cách điệu) -->
-                            <svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- CapCut -->
+                    <a href="#" class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg dark:shadow-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300 group">
+                        <div class="w-20 h-20 mx-auto mb-6 bg-gray-100 dark:bg-gray-900 rounded-2xl flex items-center justify-center group-hover:scale-110 transition duration-300 border border-gray-200 dark:border-gray-600">
+                            <svg class="w-10 h-10 text-gray-800 dark:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="6" cy="6" r="3"></circle>
                                 <circle cx="6" cy="18" r="3"></circle>
                                 <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
@@ -427,212 +434,231 @@
                                 <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-2">CapCut</h3>
-                        <p class="text-gray-300 font-medium mb-4">Biên Tập Video Sáng Tạo</p>
-                        <p class="text-gray-400 text-sm">Công cụ dựng phim linh hoạt với kho hiệu ứng phong phú, giúp hiện thực hóa ý tưởng nhanh chóng và bắt mắt.</p>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">CapCut</h3>
+                        <p class="text-gray-600 dark:text-gray-300 font-medium mb-4">Biên Tập Video Sáng Tạo</p>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm">Công cụ dựng phim linh hoạt với kho hiệu ứng phong phú.</p>
                     </a>
 
                     <!-- GitHub -->
-                    <a  href = "https://github.com/smile211107/DoAn-KyNangMem" class="bg-gray-800 p-8 rounded-xl shadow-2xl hover:bg-gray-700 transition duration-300 group">
-    
-                        <div class="w-20 h-20 mx-auto mb-6 bg-gray-700/50 rounded-2xl flex items-center justify-center group-hover:scale-110 transition duration-300 border border-gray-500/30">
-                            <!-- SVG GitHub Icon -->
-                            <svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <a href="https://github.com/smile211107/DoAn-KyNangMem" class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg dark:shadow-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300 group">
+                        <div class="w-20 h-20 mx-auto mb-6 bg-gray-100 dark:bg-gray-700/50 rounded-2xl flex items-center justify-center group-hover:scale-110 transition duration-300 border border-gray-200 dark:border-gray-500/30">
+                            <svg class="w-10 h-10 text-gray-800 dark:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-2">GitHub</h3>
-                        <p class="text-gray-300 font-medium mb-4">Quản Lý Dự Án & Mã Nguồn</p>
-                        <p class="text-gray-400 text-sm">Nền tảng lưu trữ và quản lý mã nguồn website, hỗ trợ làm việc nhóm hiệu quả và minh bạch.</p>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">GitHub</h3>
+                        <p class="text-gray-600 dark:text-gray-300 font-medium mb-4">Quản Lý Dự Án & Mã Nguồn</p>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm">Nền tảng lưu trữ và quản lý mã nguồn website.</p>
                     </a>
+
                     <!-- Canva -->
-                    <a href = "https://www.canva.com/" class="bg-gray-800 p-8 rounded-xl shadow-2xl hover:bg-gray-700 transition duration-300 group">
-                        <div class="w-20 h-20 mx-auto mb-6 bg-blue-900/50 rounded-2xl flex items-center justify-center group-hover:scale-110 transition duration-300 border border-blue-400/30">
-                            <!-- SVG Canva/Design Icon Placeholder -->
-                            <svg class="w-10 h-10 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <a href="https://www.canva.com/" class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg dark:shadow-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300 group">
+                        <div class="w-20 h-20 mx-auto mb-6 bg-blue-100 dark:bg-blue-900/50 rounded-2xl flex items-center justify-center group-hover:scale-110 transition duration-300 border border-blue-200 dark:border-blue-400/30">
+                            <svg class="w-10 h-10 text-blue-500 dark:text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="10"></circle>
                                 <path d="M8 12a4 4 0 1 0 8 0"></path>
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-2">Canva</h3>
-                        <p class="text-blue-400 font-medium mb-4">Thiết Kế Truyền Thông</p>
-                        <p class="text-gray-400 text-sm">Công cụ thiết kế đồ họa linh hoạt, được sử dụng để tạo poster, banner và các ấn phẩm quảng bá cho phim.</p>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Canva</h3>
+                        <p class="text-blue-600 dark:text-blue-400 font-medium mb-4">Thiết Kế Truyền Thông</p>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm">Công cụ thiết kế poster và ấn phẩm truyền thông.</p>
                     </a>
-
                 </div>
             </div>
         </section>
 
-        <!-- 7. TÀI LIỆU DỰ ÁN (NEW SECTION) -->
-        <section id="tai-lieu" class="py-20 bg-black">
+        <!-- 7. TÀI LIỆU DỰ ÁN -->
+        <section id="tai-lieu" class="py-20 bg-white dark:bg-black transition-colors duration-300">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-bold text-white text-center mb-12 border-b-2 border-red-600 pb-2 inline-block mx-auto">KHO TÀI LIỆU DỰ ÁN</h2>
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white text-center mb-12 border-b-2 border-red-600 pb-2 inline-block mx-auto">KHO TÀI LIỆU DỰ ÁN</h2>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    
                     <!-- File 1: Kịch bản -->
-                    <a href="./assets/file/BANGKEHOACH.pdf" class="group block bg-gray-900 border border-gray-800 p-6 rounded-xl hover:border-red-600 transition-all hover:shadow-red-900/30 shadow-lg relative overflow-hidden">
+                    <a href="./assets/file/BANGKEHOACH.pdf" class="group block bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl hover:border-red-600 dark:hover:border-red-600 transition-all hover:shadow-lg dark:hover:shadow-red-900/30 shadow-md relative overflow-hidden">
                         <div class="absolute top-0 right-0 p-2 opacity-50 group-hover:opacity-100 transition">
                             <svg class="w-5 h-5 text-gray-400 group-hover:text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                         </div>
                         <div class="flex flex-col items-center text-center">
-                            <svg class="w-12 h-12 text-blue-400 mb-3 group-hover:scale-110 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                            <h4 class="text-white font-semibold mb-1 group-hover:text-red-500 transition">Bảng kế hoạch</h4>
+                            <svg class="w-12 h-12 text-blue-500 dark:text-blue-400 mb-3 group-hover:scale-110 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            <h4 class="text-gray-900 dark:text-white font-semibold mb-1 group-hover:text-red-600 dark:group-hover:text-red-500 transition">Bảng kế hoạch</h4>
                             <p class="text-xs text-gray-500">PDF • 2.4 MB</p>
                         </div>
                     </a>
-
                     <!-- File 2: Call Sheet -->
-                    <a href="#" class="group block bg-gray-900 border border-gray-800 p-6 rounded-xl hover:border-red-600 transition-all hover:shadow-red-900/30 shadow-lg relative overflow-hidden">
+                    <a href="#" class="group block bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl hover:border-red-600 dark:hover:border-red-600 transition-all hover:shadow-lg dark:hover:shadow-red-900/30 shadow-md relative overflow-hidden">
                         <div class="absolute top-0 right-0 p-2 opacity-50 group-hover:opacity-100 transition">
-                            <svg class="w-5 h-5 text-gray-400 group-hover:text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                        </div>
-                        <div class="flex flex-col items-center text-center">
-                            <svg class="w-12 h-12 text-green-400 mb-3 group-hover:scale-110 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
-                            <h4 class="text-white font-semibold mb-1 group-hover:text-red-500 transition">Call Sheet</h4>
+                            <svg class="w-5 h-5 text-gray-400 group-hover:text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                            <h4 class="text-gray-900 dark:text-white font-semibold mb-1 group-hover:text-red-600 dark:group-hover:text-red-500 transition">Call Sheet</h4>
                             <p class="text-xs text-gray-500">XLSX • 1.1 MB</p>
                         </div>
                     </a>
-
                     <!-- File 3: Shot List -->
-                    <a href="#" class="group block bg-gray-900 border border-gray-800 p-6 rounded-xl hover:border-red-600 transition-all hover:shadow-red-900/30 shadow-lg relative overflow-hidden">
+                    <a href="#" class="group block bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl hover:border-red-600 dark:hover:border-red-600 transition-all hover:shadow-lg dark:hover:shadow-red-900/30 shadow-md relative overflow-hidden">
                         <div class="absolute top-0 right-0 p-2 opacity-50 group-hover:opacity-100 transition">
                             <svg class="w-5 h-5 text-gray-400 group-hover:text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                         </div>
                         <div class="flex flex-col items-center text-center">
-                            <svg class="w-12 h-12 text-yellow-400 mb-3 group-hover:scale-110 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                            <h4 class="text-white font-semibold mb-1 group-hover:text-red-500 transition">Bảng Phân Cảnh</h4>
+                            <svg class="w-12 h-12 text-yellow-500 dark:text-yellow-400 mb-3 group-hover:scale-110 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            <h4 class="text-gray-900 dark:text-white font-semibold mb-1 group-hover:text-red-600 dark:group-hover:text-red-500 transition">Bảng Phân Cảnh</h4>
                             <p class="text-xs text-gray-500">PDF • 5.8 MB</p>
                         </div>
                     </a>
-
                     <!-- File 4: Props List -->
-                    <a href="#" class="group block bg-gray-900 border border-gray-800 p-6 rounded-xl hover:border-red-600 transition-all hover:shadow-red-900/30 shadow-lg relative overflow-hidden">
+                    <a href="#" class="group block bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl hover:border-red-600 dark:hover:border-red-600 transition-all hover:shadow-lg dark:hover:shadow-red-900/30 shadow-md relative overflow-hidden">
                         <div class="absolute top-0 right-0 p-2 opacity-50 group-hover:opacity-100 transition">
                             <svg class="w-5 h-5 text-gray-400 group-hover:text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                         </div>
                         <div class="flex flex-col items-center text-center">
-                            <svg class="w-12 h-12 text-purple-400 mb-3 group-hover:scale-110 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                            <h4 class="text-white font-semibold mb-1 group-hover:text-red-500 transition">Danh Sách Đạo Cụ</h4>
+                            <svg class="w-12 h-12 text-purple-500 dark:text-purple-400 mb-3 group-hover:scale-110 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            <h4 class="text-gray-900 dark:text-white font-semibold mb-1 group-hover:text-red-600 dark:group-hover:text-red-500 transition">Danh Sách Đạo Cụ</h4>
                             <p class="text-xs text-gray-500">DOCX • 0.5 MB</p>
                         </div>
                     </a>
-
                 </div>
             </div>
         </section>
+        
+        <!-- Thêm Link Google Drive chứa ảnh -->
+        <div class="py-10 bg-gray-100 dark:bg-black transition-colors duration-300 text-center">
+            <div class="inline-block p-[2px] rounded-full bg-gradient-to-r from-green-400 via-blue-500 to-purple-600">
+                <a href="https://drive.google.com/drive/folders/1EjsdZ56MPTgJtz_ob0JUN7r1sjnKraPe" target="_blank" class="block px-8 py-4 bg-white dark:bg-gray-900 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition duration-300 group relative overflow-hidden">
+                    <span class="relative z-10 flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"/>
+                        </svg>
+                        <span class="text-gray-900 dark:text-white font-bold text-lg group-hover:text-green-600 dark:group-hover:text-green-300 transition tracking-wide">TẢI KHO ẢNH & TÀI NGUYÊN TRÊN DRIVE</span>
+                        <svg class="w-5 h-5 text-gray-500 dark:text-gray-400 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </span>
+                </a>
+            </div>
+            <p class="text-gray-600 dark:text-gray-500 text-sm mt-4">Link Google Drive chứa toàn bộ ảnh hậu trường chất lượng cao và poster gốc.</p>
+        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-black border-t border-gray-800 py-6">
+    <footer class="bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800 py-6 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm">
-            <p class="text-gray-500 text-center md:text-left">&copy; 2025 Phim Ngắn: BƯỚC RA KHỎI MÀN HÌNH.</p>
+            <p class="text-gray-600 dark:text-gray-500 text-center md:text-left">&copy; 2025 Phim Ngắn: BƯỚC RA KHỎI MÀN HÌNH.</p>
             <div class="mt-4 md:mt-0">
-                <a href="mailto:contact@phimngan.vn" class="text-gray-500 hover:text-white transition">Liên hệ: contact@phimngan.vn</a>
+                <a href="mailto:contact@phimngan.vn" class="text-gray-600 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white transition">Liên hệ: contact@phimngan.vn</a>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript cho chức năng cuộn mượt, xử lý form -->
-    <script>
-        // --- HÀM HỖ TRỢ CHUNG ---
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/90 hidden flex items-center justify-center p-4" onclick="closeLightbox()">
+        <button class="absolute top-4 right-4 text-white hover:text-gray-300">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <img id="lightbox-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Full size" class="max-w-full max-h-full rounded-lg shadow-2xl" onclick="event.stopPropagation()">
+    </div>
 
-        // Hàm cuộn mượt đến các section
-        function scrollToSection(id) {
-            const section = document.getElementById(id);
-            if (section) {
-                // Sử dụng hàm scrollIntoView để cuộn mượt
-                section.scrollIntoView({ behavior: 'smooth' });
-            }
+    <script>
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+        // Check for saved user preference, if any, on load of the website
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            themeToggleLightIcon.classList.remove('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeToggleDarkIcon.classList.remove('hidden');
         }
 
-        // Tạo Modal/Message Box tùy chỉnh (thay thế cho alert/confirm)
+        themeToggleBtn.addEventListener('click', function() {
+            // toggle icons inside button
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+
+            // if set via local storage previously
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+
+            // if NOT set via local storage previously
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+        });
+
+        function openLightbox(imgSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = imgSrc;
+            lightbox.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('hidden');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                document.getElementById('lightbox-img').src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"; 
+            }, 300);
+        }
+
+        function scrollToSection(id) {
+            const section = document.getElementById(id);
+            if (section) section.scrollIntoView({ behavior: 'smooth' });
+        }
+
         function showNotification(title, message) {
             const existingModal = document.getElementById('custom-modal');
             if (existingModal) existingModal.remove();
 
             const modalHtml = `
-                <div id="custom-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-[100]">
-                    <div class="bg-gray-800 p-6 rounded-xl shadow-2xl max-w-sm mx-4 transform transition-all duration-300 scale-100">
-                        <h4 class="text-xl font-bold text-red-500 mb-3">${title}</h4>
-                        <p class="text-gray-300 text-sm">${message}</p>
-                        <button onclick="closeModal()" class="mt-5 px-4 py-2 bg-red-600 text-white rounded-full text-sm hover:bg-red-700 transition">Đóng</button>
+                <div id="custom-modal" class="fixed inset-0 bg-black/50 dark:bg-black/75 flex items-center justify-center z-[100]">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-2xl max-w-sm mx-4 transform transition-all duration-300">
+                        <h4 class="text-xl font-bold text-red-600 dark:text-red-500 mb-3">${title}</h4>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">${message}</p>
+                        <button onclick="document.getElementById('custom-modal').remove()" class="mt-5 px-4 py-2 bg-red-600 text-white rounded-full text-sm hover:bg-red-700 transition">Đóng</button>
                     </div>
                 </div>
             `;
             document.body.insertAdjacentHTML('beforeend', modalHtml);
         }
 
-        function closeModal() {
-            const modal = document.getElementById('custom-modal');
-            if (modal) {
-                modal.classList.add('opacity-0');
-                setTimeout(() => modal.remove(), 300); // Xóa sau khi hoàn thành transition
-            }
-        }
-        
-        // HÀM MỚI: MÔ PHỎNG TRANG XEM BÀI VIẾT (TIN TỨC)
         function showPlaceholderPage(articleTitle) {
-            // Loại bỏ các modal/placeholder cũ
-            const existingPlaceholder = document.getElementById('article-placeholder');
-            if (existingPlaceholder) existingPlaceholder.remove();
-
-            // Tạo nội dung mô phỏng bài viết
-            const placeholderHtml = `
-                <div id="article-placeholder" class="fixed inset-0 bg-black overflow-y-auto z-[90]">
-                    <div class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-                        <button onclick="closePlaceholderPage()" class="text-red-500 hover:text-red-300 mb-6 flex items-center transition duration-200">
-                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-                            Quay lại Trang Chủ
-                        </button>
-                        
-                        <div class="bg-gray-900 p-8 rounded-xl shadow-2xl">
-                            <h1 class="text-4xl font-black text-white mb-4">${articleTitle}</h1>
-                            <p class="text-sm text-gray-500 mb-8 border-b border-gray-700 pb-4">Ngày đăng: 10/11/2024 | Tác giả: Đội Ngũ Sản Xuất | Thể loại: Hậu trường</p>
-                            
-                            <p class="text-lg text-gray-300 leading-relaxed mb-6">
-                                Đây là trang đọc chi tiết bài viết. Nội dung này chỉ là mô phỏng để thay thế cho việc quay về đầu trang.
-                            </p>
-                            
-                            <img class="w-full h-80 object-cover rounded-lg shadow-lg mb-6" src="https://placehold.co/800x400/3d3d3d/ffffff?text=Hình+ảnh+minh+hoạ+bài+viết" alt="Hình ảnh minh hoạ">
-
-                            <p class="text-gray-400 leading-loose mb-4">
-                                Trong những ngày quay cuối cùng, không khí trên phim trường luôn sôi sục. Mọi người đều làm việc quên mình, từ ánh sáng, âm thanh đến diễn xuất, tất cả đều được chăm chút tỉ mỉ. Đạo diễn Phạm Trung Tín chia sẻ: "Áp lực rất lớn, nhưng nhìn thấy sự đồng lòng của cả đội, tôi biết chúng tôi đang tạo ra điều gì đó thực sự ý nghĩa."
-                            </p>
-                            <p class="text-gray-400 leading-loose mb-4">
-                                Khó khăn lớn nhất có lẽ là cảnh cao trào dưới mưa. Chúng tôi phải dùng đến ba xe bồn nước lớn và quay liên tục trong hơn 10 tiếng đồng hồ. Thật may mắn, nỗ lực đó đã mang lại những thước phim đắt giá, lột tả được cảm xúc đỉnh điểm của nhân vật An.
-                            </p>
-                            <p class="text-gray-400 leading-loose">
-                                Mời các bạn tiếp tục theo dõi các cập nhật mới nhất từ chúng tôi. Bộ phim sẽ sớm ra mắt khán giả!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            `;
-            document.body.insertAdjacentHTML('beforeend', placeholderHtml);
-            document.body.style.overflow = 'hidden'; // Chặn cuộn trang chính
+           // Hàm trống theo yêu cầu
         }
 
-        // HÀM MỚI: HIỂN THỊ CHI TIẾT HOẠT ĐỘNG (MODAL)
         function showActivityModal(title, imgSrc, description) {
-            // Remove existing modal if any
             const existing = document.getElementById('activity-modal');
             if (existing) existing.remove();
 
+            const isVideo = imgSrc.toLowerCase().endsWith('.mp4');
+
             const modalHtml = `
                 <div id="activity-modal" class="fixed inset-0 bg-black/95 z-[100] overflow-y-auto flex items-center justify-center p-4">
-                    <div class="relative bg-gray-900 rounded-2xl max-w-2xl w-full p-8 shadow-2xl border border-gray-800 transform transition-all scale-100">
-                        <button onclick="document.getElementById('activity-modal').remove(); document.body.style.overflow = ''" class="absolute top-4 right-4 text-gray-400 hover:text-white transition">
+                    <div class="relative bg-white dark:bg-gray-900 rounded-2xl max-w-2xl w-full p-8 shadow-2xl border border-gray-200 dark:border-gray-800 transform transition-all scale-100">
+                        <button onclick="document.getElementById('activity-modal').remove(); document.body.style.overflow = ''" class="absolute top-4 right-4 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                         </button>
-                        
-                        <h2 class="text-3xl font-bold text-white mb-6 text-center text-red-500 border-b border-gray-800 pb-4">${title}</h2>
-                        <img src="${imgSrc}" alt="${title}" class="w-full h-64 object-cover rounded-xl mb-6 shadow-lg border border-gray-700">
-                        
-                        <div class="text-gray-300 space-y-4 leading-relaxed text-lg">
+                        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center text-red-600 dark:text-red-500 border-b border-gray-200 dark:border-gray-800 pb-4">${title}</h2>
+                        ${isVideo ? 
+                            `<video autoplay loop muted playsinline class="w-full h-64 object-cover rounded-xl mb-6 shadow-lg border border-gray-200 dark:border-gray-700">
+                                <source src="${imgSrc}" type="video/mp4">
+                                Your browser does not support the video tag.
+                             </video>` 
+                            : 
+                            `<img src="${imgSrc}" alt="${title}" class="w-full h-64 object-cover rounded-xl mb-6 shadow-lg border border-gray-200 dark:border-gray-700">`
+                        }
+                        <div class="text-gray-600 dark:text-gray-300 space-y-4 leading-relaxed text-lg">
                             <p>${description}</p>
-                            <p class="text-gray-400 italic text-base mt-4 border-t border-gray-800 pt-4">
-                                "Những hoạt động này không chỉ là trò chơi, mà là cơ hội để chúng tôi thấu hiểu nhau hơn, cùng nhau vượt qua giới hạn của bản thân - đúng như tinh thần của bộ phim."
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -640,23 +666,6 @@
             document.body.insertAdjacentHTML('beforeend', modalHtml);
             document.body.style.overflow = 'hidden';
         }
-
-        // HÀM MỚI: ĐÓNG TRANG XEM BÀI VIẾT
-        function closePlaceholderPage() {
-            const placeholder = document.getElementById('article-placeholder');
-            if (placeholder) {
-                placeholder.remove();
-            }
-            document.body.style.overflow = ''; // Cho phép cuộn trang chính trở lại
-            // Tùy chọn: Cuộn về lại mục tin tức
-            scrollToSection('tin-tuc'); 
-        }
-
-        // Xử lý menu mobile (chỉ hiển thị liên kết cuộn)
-        document.querySelector('.md\\:hidden').addEventListener('click', () => {
-            showNotification('Menu', 'Hãy cuộn xuống để xem các mục hoặc sử dụng thanh điều hướng trên desktop!');
-            scrollToSection('trang-chu');
-        });
     </script>
 </body>
 </html>
